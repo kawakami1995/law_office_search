@@ -1,0 +1,19 @@
+<% provide(:title, "ユーザー登録") %>
+<h1>ユーザー登録</h1>
+<%= form_with url: user_create_path do |f| %>
+  <div>
+    <%= f.label :ユーザー名 %><br>
+    <%= f.text_field :user_name %>
+  </div>
+  <div>
+    <%= f.label :メールアドレス %><br>
+    <%= f.text_field :email_address %>
+  </div>
+  <div>
+    <%= f.label :パスワード %><br>
+    <%= f.text_field :password %>
+  </div>
+  <div>
+    <%= f.submit "登録" %>
+  </div>
+<% end %>
