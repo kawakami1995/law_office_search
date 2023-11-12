@@ -8,9 +8,16 @@
   </h1>
   <!--ヘッダー中央コンテンツ-->
   <div id="header-center">
-    <p><a href="#"><img src="https://template-party.com/template/tp_yakuba1/tp_yakuba1_skyblue/images/banner_1.jpg"></a></p>
-    <p><a href="#"><img src="https://template-party.com/template/tp_yakuba1/tp_yakuba1_skyblue/images/banner_2.jpg"></a></p>
-    <%= link_to "新規登録", users_sign_up_path %>
+    <% if user_signed_in? %>
+      <% @user.user_name%>
+    <% else %>
+      <div class="headerButton login">
+        <%= link_to "ログイン",new_user_session_path %>
+      </div>
+      <div class="headerButton newAccount">
+          <%= link_to "新規登録",new_user_registration_path %>
+      </div>
+    <% end %>
   </div>
   <!--文字サイズ変更ボタン-->
   <div id="f-size">
