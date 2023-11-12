@@ -3,5 +3,6 @@ ja:
     attributes:
       user:
         user_name: ユーザー名
-        email_address: メールアドレス
+        email: メールアドレス
         password: パスワード
+        password_confirmation: パスワード（確認用）
