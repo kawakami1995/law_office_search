@@ -9,7 +9,10 @@
   <!--ヘッダー中央コンテンツ-->
   <div id="header-center">
     <% if user_signed_in? %>
-      <% @user.user_name%>
+      <div id="user_name">
+        <p class="">ユーザー:<%= @user.user_name %></p>
+        <%= link_to "マイページ",users_path(id: @user.id) %>   
+      </div> 
     <% else %>
       <div class="headerButton login">
         <%= link_to "ログイン",new_user_session_path %>

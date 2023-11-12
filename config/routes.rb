@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'top#index'
 
   post '/users/create', to:'users#create'
-  get '/users/:id', to:'users#show'
+  get '/users/:id', to:'users#show', as: "users"
 
   get "/users/sign_in",to:"devise/sessions#new"
   post "/users/sign_in",to:"evise/sessions#create"
