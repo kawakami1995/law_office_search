@@ -11,7 +11,7 @@
     <% if user_signed_in? %>
       <div id="user_name">
         <p class="">ユーザー:<%= @user.user_name %></p>
-        <%= link_to "マイページ",users_path(id: @user.id) %>   
+        <%= link_to "マイページ",account_path(id: @user.id) %>   
       </div> 
     <% else %>
       <div class="headerButton login">

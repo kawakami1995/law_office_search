@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   root 'top#index'
 
   post '/users/create', to:'users#create'
-  get '/users/:id', to:'users#show', as: "users"
+  get '/users/account', to:'users#account', as: "account"
+  get '/users/:id/user_name/edit', to:'users#edit'
+  patch '/users/:id/update', to:'users#update', as:'users_update'
 
   get "/users/sign_in",to:"devise/sessions#new"
   post "/users/sign_in",to:"evise/sessions#create"
