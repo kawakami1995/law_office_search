@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get '/users/account', to:'users#account', as: 'account'
   get '/users/account/user_name_edit',to: 'users#user_name_edit', as: 'user_name_edit'
   patch '/users/account/user_name_update', to: 'users#user_name_update', as: 'user_name_update'
+  get '/users/account/email_edit',to: 'users#email_edit', as: 'email_edit'
+  patch '/users/account/email_update', to: 'users#email_update', as: 'email_update'
 
   get "/users/sign_in",to:"devise/sessions#new"
   post "/users/sign_in",to:"evise/sessions#create"

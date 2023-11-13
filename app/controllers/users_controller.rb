@@ -28,4 +28,17 @@ class UsersController < ApplicationController
       render "user_name_edit"      
     end
   end
+
+  def email_edit
+    @user = current_user
+  end
+
+  def email_update
+    @user = current_user
+    if @user.update(params.require(:user).permit(:email))
+      redirect_to "/users/account"
+    else
+      render "email_edit"      
+    end
+  end
 end
