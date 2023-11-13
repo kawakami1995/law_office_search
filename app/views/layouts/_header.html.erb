@@ -11,14 +11,15 @@
     <% if user_signed_in? %>
       <div id="user_name">
         <p class="">ユーザー:<%= @user.user_name %></p>
-        <%= link_to "マイページ",account_path(id: @user.id) %>   
+        <%= link_to "マイページ",account_path(id: @user.id) %>
+        <%= link_to "ログアウト",destroy_user_session_path, method: :delete %>
       </div> 
     <% else %>
       <div class="headerButton login">
         <%= link_to "ログイン",new_user_session_path %>
       </div>
       <div class="headerButton newAccount">
-          <%= link_to "新規登録",new_user_registration_path %>
+        <%= link_to "新規登録",new_user_registration_path %>
       </div>
     <% end %>
   </div>
