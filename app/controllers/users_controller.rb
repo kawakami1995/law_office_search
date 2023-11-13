@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def account
-    @user = User.find_by(id: params[:id])
+    @user = current_user
   end
 
   def new
@@ -13,6 +13,19 @@ class UsersController < ApplicationController
       redirect_to root_path
     else
       render 'new'
+    end
+  end
+
+  def user_name_edit
+    @user = current_user
+  end
+
+  def user_name_update
+    @user = current_user
+    if @user.update(params.require(:user).permit(:user_name))
+      redirect_to "/users/account"
+    else
+      render "user_name_edit"      
     end
   end
 end
