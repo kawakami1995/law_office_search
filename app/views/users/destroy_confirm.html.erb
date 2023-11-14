@@ -1,0 +1,6 @@
+<% provide(:title, "ユーザー情報削除") %>
+<%= @user.user_name %><br>
+<%= @user.email %>
+<p style="color: red;">このアカウントを削除しますか？</p>
+<%= link_to "アカウントを削除する", user_destroy_path, method: :delete %><br>
+<%= link_to "戻る", :back %>

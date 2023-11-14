@@ -3,5 +3,6 @@
 <%= @user.user_name %>
 <%= link_to "変更", user_name_edit_path %><br>
 <%= @user.email %>
-<%= link_to "変更", email_edit_path %>
+<%= link_to "変更", email_edit_path %><br>
+<%= link_to "アカウントを削除する", user_destroy_confirm_path %>
 

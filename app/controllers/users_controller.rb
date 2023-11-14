@@ -41,4 +41,14 @@ class UsersController < ApplicationController
       render "email_edit"      
     end
   end
+
+  def destroy_confirm
+    @user = current_user
+  end
+
+  def destroy
+    @user = current_user
+    @user.destroy
+    redirect_to root_path
+  end
 end
