@@ -21,5 +21,9 @@ Rails.application.routes.draw do
   get "/users/cancel",to:"devise/registrations#cancel"
   get "/users/sign_up",to:"devise/registrations#new"
   get "/users/edit",to:"devise/registrations#edit"
+
+  get '/law_offices/index' ,to: 'law_offices#index'
+  get '/law_offices/new' ,to: 'law_offices#new'
+  post '/law_offices/create' ,to: 'law_offices#create'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

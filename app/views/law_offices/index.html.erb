@@ -1,0 +1,24 @@
+<% provide(:title, "法律事務所一覧") %>
+<h1>法律事務所一覧</h1>
+<table>
+  <thead>
+    <tr>
+      <th>法律事務所名</th>
+      <th>担当弁護士</th>
+      <th>住所</th>
+      <th>電話番号</th>
+      <th>営業時間</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @law_offices.each do |law_office| %>
+      <tr>
+        <td><%= law_office.office_name %></td>
+        <td><%= law_office.representative_lawyer_name %></td>
+        <td><%= law_office.address %></td>
+        <td><%= law_office.phone_number %></td>
+        <td><%= law_office.business_hours %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
