@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'top#index'
-
-  post '/users/create', to:'users#create'
-  get '/users/account', to:'users#account', as: 'account'
+  
+  get '/users/account', to: 'users#account', as: 'account'
   get '/users/account/user_name_edit',to: 'users#user_name_edit', as: 'user_name_edit'
   patch '/users/account/user_name_update', to: 'users#user_name_update', as: 'user_name_update'
   get '/users/account/email_edit', to: 'users#email_edit', as: 'email_edit'
