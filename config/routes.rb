@@ -27,5 +27,7 @@ Rails.application.routes.draw do
   post '/law_offices/create' ,to: 'law_offices#create'
   get '/law_offices/:id/edit', to: 'law_offices#edit', as: 'law_office_edit'
   patch '/law_offices/:id/update', to: 'law_offices#update', as: 'law_office_update'
+  get 'law_offices/:id/destroy_confirm', to: 'law_offices#destroy_confirm', as: 'law_office_destroy_confirm'
+  delete 'law_offices/:id/destroy', to: 'law_offices#destroy', as: 'law_office_destroy'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -28,4 +28,14 @@ class LawOfficesController < ApplicationController
       render "edit"
     end
   end
+
+  def destroy_confirm
+    @law_office = LawOffice.find_by(id: params[:id])
+  end
+
+  def destroy
+    @law_office = LawOffice.find_by(id: params[:id])
+    @law_office.destroy
+    redirect_to law_offices_index_path
+  end
 end

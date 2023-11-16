@@ -1,0 +1,13 @@
+<% provide(:title, "法律事務所情報削除確認") %>
+<%= @law_office.office_name %><br>
+<%= @law_office.representative_lawyer_name %><br>
+<%= @law_office.postal_code %><br>
+<%= @law_office.address %><br>
+<%= @law_office.latitude %><br>
+<%= @law_office.longitude %><br>
+<%= @law_office.phone_number %><br>
+<%= @law_office.business_hours %><br>
+<%= @law_office.office_url %><br>
+<p style="color: red;">この法律事務所を削除しますか？</p>
+<%= link_to "法律事務所を削除する", law_office_destroy_path(id: @law_office.id), method: :delete %><br>
+<%= link_to "戻る", :back %>
