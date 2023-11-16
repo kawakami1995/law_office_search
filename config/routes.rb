@@ -25,5 +25,7 @@ Rails.application.routes.draw do
   get '/law_offices/index' ,to: 'law_offices#index'
   get '/law_offices/new' ,to: 'law_offices#new'
   post '/law_offices/create' ,to: 'law_offices#create'
+  get '/law_offices/:id/edit', to: 'law_offices#edit', as: 'law_office_edit'
+  patch '/law_offices/:id/update', to: 'law_offices#update', as: 'law_office_update'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -1,7 +1,7 @@
-<% provide(:title, "法律事務所新規登録") %>
-<h1>法律事務所新規登録</h1>
+<% provide(:title, "法律事務所情報変更") %>
+<h1>法律事務所情報変更</h1>
 
-<%= form_with model: @law_office, url: law_offices_create_path, html: {multipart: true} ,local: true do |f| %>
+<%= form_with model: @law_office, url: law_office_update_path, method: :patch, id: @law_office.id, html: {multipart: true} ,local: true do |f| %>
   <%= render "shared/error", obj: @law_office %> 
 
   <p>※すべての項目を入力してください</p>
@@ -51,7 +51,12 @@
     <%= f.text_field :office_url, autocomplete: "address"%>
   </div>
 
+  <div class="field">
+    <%= f.hidden_field :id, autocomplete: "id", value: @law_office.id %>
+  </div>
+
   <div class="actions">
-    <%= f.submit "保存"%>
+    <%= f.submit "更新する"%>
   </div>  
 <% end %> 
+<%= link_to "戻る", :back %>

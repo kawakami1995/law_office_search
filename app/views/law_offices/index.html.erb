@@ -18,6 +18,7 @@
         <td><%= law_office.address %></td>
         <td><%= law_office.phone_number %></td>
         <td><%= law_office.business_hours %></td>
+        <td><%= link_to '変更', law_office_edit_path(id: law_office.id) %></td>
       </tr>
     <% end %>
   </tbody>
