@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   get '/law_offices/index' ,to: 'law_offices#index'
   get '/law_offices/new' ,to: 'law_offices#new'
   post '/law_offices/create' ,to: 'law_offices#create'
+  get '/law_offices/:id/show' ,to: 'law_offices#show', as: 'law_office_show'
   get '/law_offices/:id/edit', to: 'law_offices#edit', as: 'law_office_edit'
   patch '/law_offices/:id/update', to: 'law_offices#update', as: 'law_office_update'
   get 'law_offices/:id/destroy_confirm', to: 'law_offices#destroy_confirm', as: 'law_office_destroy_confirm'

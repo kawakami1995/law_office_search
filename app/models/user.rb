@@ -5,4 +5,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   validates :password_confirmation, presence: true, on: :create
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
 end

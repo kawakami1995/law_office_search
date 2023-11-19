@@ -16,6 +16,10 @@ class LawOfficesController < ApplicationController
     end
   end
 
+  def show
+    @law_office = LawOffice.find_by(id: params[:id])
+  end
+
   def edit
     @law_office = LawOffice.find_by(id: params[:id])
   end

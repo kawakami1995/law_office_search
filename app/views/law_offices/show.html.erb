@@ -1,0 +1,46 @@
+<% provide(:title, "法律事務所詳細") %>
+<h1><%= @law_office.office_name %></h1>
+<table border="1">
+  <thead>
+    <tr><th>担当弁護士</th><td><%= @law_office.representative_lawyer_name %></td></tr>
+    <tr><th>住所</th><td><%= @law_office.address %></td></tr>
+    <tr><th>電話番号</th><td><%= @law_office.phone_number %></td></tr>
+    <tr><th>営業時間</th><td><%= @law_office.business_hours %></td></tr>
+    <tr><th>ホームページ</th><td><a href="<%= @law_office.office_url %>"><%= @law_office.office_name %></a></td></tr>
+  </thead>
+</table>
+
+<script type="text/javascript">
+  function initMap() {
+    var test = {lat: <%= @law_office.latitude %>, lng: <%= @law_office.longitude %>};
+    var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 15, 
+                center: test
+              });
+    var transitLayer = new google.maps.TransitLayer();
+    transitLayer.setMap(map);
+    var contentString = '<%= @law_office.office_name %>';
+    var infowindow = new google.maps.InfoWindow({
+      content: contentString
+    });
+    var marker = new google.maps.Marker({
+                  position:test,
+                  map: map,
+                  title: contentString
+                 });
+    marker.addListener('click', function() {
+      infowindow.open(map, marker);
+    });
+  }
+</script>
+<script async defer
+          src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV['MAPS_API_KEY'] %>&callback=initMap">
+</script>
+<style type="text/css">
+  #map { height: 500px;
+         width: 50%;
+         margin-top: 30px;}
+  a { color: blue;
+      text-decoration: none;}      
+</style>
+<div id="map"></div>
