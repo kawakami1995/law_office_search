@@ -17,6 +17,7 @@ class LawOfficesController < ApplicationController
   end
 
   def show
+    @user = current_user
     @law_office = LawOffice.find_by(id: params[:id])
   end
 

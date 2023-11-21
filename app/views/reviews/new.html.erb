@@ -1,0 +1,23 @@
+<% provide(:title, "口コミ投稿") %>
+<h1>口コミ投稿</h1>
+
+<%= form_with model: @review, url: review_create_path, html: {multipart: true} ,local: true do |f| %>
+  <%= render "shared/error", obj: @review %> 
+
+  <div class="field">
+    <%= f.text_field :user_id, autofocus: true, autocomplete: "user_id", value: @user.id %><br>
+  </div>
+
+  <div class="field">
+    <%= f.text_field :law_office_id, autocomplete: "law_office_id", value: @law_office.id %><br>
+  </div>
+
+  <div class="field">
+    <%= f.text_area :review, autocomplete: "review"%>
+  </div>  
+
+  <div class="actions">
+    <%= f.submit "投稿"%>
+    <button><%= link_to "戻る", law_office_show_path(id: @law_office.id) %></button> 
+  </div>
+<% end %>

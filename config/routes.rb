@@ -30,5 +30,8 @@ Rails.application.routes.draw do
   patch '/law_offices/:id/update', to: 'law_offices#update', as: 'law_office_update'
   get 'law_offices/:id/destroy_confirm', to: 'law_offices#destroy_confirm', as: 'law_office_destroy_confirm'
   delete 'law_offices/:id/destroy', to: 'law_offices#destroy', as: 'law_office_destroy'
+
+  get '/reviews/new' ,to: 'reviews#new'
+  post '/reviews/create' ,to: 'reviews#create', as: 'review_create'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
