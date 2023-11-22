@@ -51,4 +51,9 @@ class LawOfficesController < ApplicationController
     @law_office.destroy
     redirect_to law_offices_index_path
   end
+
+  def search
+    @user = current_user
+    @law_offices = LawOffice.where('address like ?',"#{params[:prefectures]}%")
+  end
 end

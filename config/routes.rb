@@ -30,6 +30,7 @@ Rails.application.routes.draw do
   patch '/law_offices/:id/update', to: 'law_offices#update', as: 'law_office_update'
   get 'law_offices/:id/destroy_confirm', to: 'law_offices#destroy_confirm', as: 'law_office_destroy_confirm'
   delete 'law_offices/:id/destroy', to: 'law_offices#destroy', as: 'law_office_destroy'
+  get '/law_offices/search' ,to: 'law_offices#search'
 
   get '/reviews/new' ,to: 'reviews#new'
   post '/reviews/create' ,to: 'reviews#create', as: 'review_create'
