@@ -11,7 +11,7 @@
   </thead>
 </table>
 
-<script type="text/javascript">
+<script>
   function initMap() {
     var test = {lat: <%= @law_office.latitude %>, lng: <%= @law_office.longitude %>};
     var map = new google.maps.Map(document.getElementById('map'), {
@@ -28,15 +28,25 @@
                   position:test,
                   map: map,
                   title: contentString
-                 });
+                  });
     marker.addListener('click', function() {
       infowindow.open(map, marker);
     });
   }
 </script>
 <script async defer
-          src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV['MAPS_API_KEY'] %>&callback=initMap">
+  src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV['MAPS_API_KEY'] %>&callback=initMap">
 </script>
-<div id="map"></div>
-<button><%= link_to '口コミを投稿する', reviews_new_path(law_office_id: @law_office.id) %></button>
 
+<div id="map"></div>
+<div class="review">
+  <h2>口コミ</h2>
+  <button><%= link_to '口コミを投稿する', reviews_new_path(law_office_id: @law_office.id) %></button>
+</div>
+<table border="1">
+  <% @reviews.each do |review| %>
+    <tr>
+      <td><%= review.review %></td>
+    </tr>
+  <% end %>
+</table>

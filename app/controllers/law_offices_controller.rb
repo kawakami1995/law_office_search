@@ -1,13 +1,16 @@
 class LawOfficesController < ApplicationController
   def index
+    @user = current_user
     @law_offices = LawOffice.all
   end
 
   def new
+    @user = current_user
     @law_office = LawOffice.new
   end
 
   def create
+    @user = current_user
     @law_office = LawOffice.new(params.require(:law_office).permit(:office_name, :representative_lawyer_name, :postal_code, :address, :latitude, :longitude, :phone_number, :business_hours, :office_url))
     if @law_office.save
       redirect_to law_offices_index_path
@@ -19,13 +22,16 @@ class LawOfficesController < ApplicationController
   def show
     @user = current_user
     @law_office = LawOffice.find_by(id: params[:id])
+    @reviews = Review.where(law_office_id: @law_office.id)
   end
 
   def edit
+    @user = current_user
     @law_office = LawOffice.find_by(id: params[:id])
   end
 
   def update
+    @user = current_user
     @law_office = LawOffice.find_by(id: params[:id])
     if @law_office.update(params.require(:law_office).permit(:office_name, :representative_lawyer_name, :postal_code, :address, :latitude, :longitude, :phone_number, :business_hours, :office_url))
       redirect_to law_offices_index_path
@@ -35,10 +41,12 @@ class LawOfficesController < ApplicationController
   end
 
   def destroy_confirm
+    @user = current_user
     @law_office = LawOffice.find_by(id: params[:id])
   end
 
   def destroy
+    @user = current_user
     @law_office = LawOffice.find_by(id: params[:id])
     @law_office.destroy
     redirect_to law_offices_index_path
