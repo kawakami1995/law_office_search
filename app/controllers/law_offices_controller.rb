@@ -33,7 +33,7 @@ class LawOfficesController < ApplicationController
   def update
     @user = current_user
     @law_office = LawOffice.find_by(id: params[:id])
-    if @law_office.update(params.require(:law_office).permit(:office_name, :representative_lawyer_name, :postal_code, :address, :latitude, :longitude, :phone_number, :business_hours, :office_url))
+    if @law_office.update(params.require(:law_office).permit(:office_name, :representative_lawyer_name, :focus, :postal_code, :address, :latitude, :longitude, :phone_number, :business_hours, :office_url))
       redirect_to law_offices_index_path
     else
       render "edit"
