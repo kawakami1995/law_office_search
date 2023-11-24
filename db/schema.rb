@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_11_10_023414) do
+ActiveRecord::Schema.define(version: 2023_11_24_062236) do
 
   create_table "law_offices", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2023_11_10_023414) do
     t.string "phone_number"
     t.string "business_hours"
     t.text "office_url"
+    t.string "focus"
   end
 
   create_table "reviews", force: :cascade do |t|
