@@ -11,7 +11,7 @@ class LawOfficesController < ApplicationController
 
   def create
     @user = current_user
-    @law_office = LawOffice.new(params.require(:law_office).permit(:office_name, :representative_lawyer_name, :postal_code, :address, :latitude, :longitude, :phone_number, :business_hours, :office_url))
+    @law_office = LawOffice.new(params.require(:law_office).permit(:office_name, :representative_lawyer_name, :focus, :postal_code, :address, :latitude, :longitude, :phone_number, :business_hours, :office_url))
     if @law_office.save
       redirect_to law_offices_index_path
     else
