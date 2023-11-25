@@ -1,313 +1,35 @@
 <body class="f-small p">
 	<div id="container">
 		<div id="contents">
-			<!--開閉ブロック-->
-			<div id="menubar" class="d-b">
-
-			</div>
 			<!--/#menubar-->
-			<%= form_with model: @law_office, url: law_offices_search_path, method: :get, html: {multipart: true} ,local: true do |f| %>
-				<div class="select">
-					<%= f.select :prefectures, 
-						['北海道',
-						 '青森県','岩手県','宮城県','秋田県','山形県','福島県',
-						 '茨城県','栃木県','群馬県','埼玉県','千葉県','東京都','神奈川県','山梨県','長野県',
-						 '新潟県','富山県','石川県','福井県',
-						 '岐阜県','静岡県','愛知県','三重県',
-						 '滋賀県','京都府','大阪府','兵庫県','奈良県','和歌山県',
-						 '鳥取県','島根県','岡山県','広島県','山口県',
-						 '徳島県','香川県','愛媛県','高知県',
-						 '福岡県','佐賀県','長崎県','熊本県','大分県','宮崎県','鹿児島県',
-						 '沖縄県'
-						] 
-					%>
-				</div>
-
-				<div class="actions">
-					<%= f.submit "検索"%>
-				</div>
-			<% end %>
 			<main>
 				<section>
 					<h2>テンプレートのご利用前に必ずお読み下さい</h2>
-					<h3>利用規約のご案内</h3>
-					<p>このテンプレートは、<a href="https://template-party.com/">Template Party</a>にて無料配布している『市役所・区役所・自治会向け無料ホームページテンプレート tp_yakuba1』です。必ずダウンロード先のサイトの<a href="https://template-party.com/read.html">利用規約</a>をご一読の上でご利用下さい。</p>
-					<p><strong class="color-check">HP最下部の著作表示『Web Design:Template-Party』は無断で削除しないで下さい。</strong><br>
-					わざと見えなく加工する事も禁止です。</p>
-					<p><strong class="color-check">下部の著作を外したい場合は</strong><br>
-					<a href="https://template-party.com/">Template-Party</a>の<a href="https://template-party.com/member.html">ライセンス契約</a>を行う事でHP下部の著作を外す事ができます。</p>
-					<h3>当テンプレートの詳しい使い方は</h3>
-					<p><a href="about.html">こちらをご覧下さい。</a></p>
+					<%= form_with model: @law_office, url: law_offices_search_path, method: :get, html: {multipart: true} ,local: true do |f| %>
+						<div class="select">
+							<%= f.select :prefectures, 
+								['北海道',
+								'青森県','岩手県','宮城県','秋田県','山形県','福島県',
+								'茨城県','栃木県','群馬県','埼玉県','千葉県','東京都','神奈川県','山梨県','長野県',
+								'新潟県','富山県','石川県','福井県',
+								'岐阜県','静岡県','愛知県','三重県',
+								'滋賀県','京都府','大阪府','兵庫県','奈良県','和歌山県',
+								'鳥取県','島根県','岡山県','広島県','山口県',
+								'徳島県','香川県','愛媛県','高知県',
+								'福岡県','佐賀県','長崎県','熊本県','大分県','宮崎県','鹿児島県',
+								'沖縄県'
+								] 
+							%>
+						</div>
+						<div class="actions">
+							<%= f.submit "検索"%>
+						</div>
+					<% end %>
 				</section>
 				<section>
 					<h2>お知らせ</h2>
-					<dl class="new">
-					<dt>2023/08/04<span>その他</span></dt>
-					<dd>市役所・区役所・自治会向け 無料ホームページテンプレート tp_yakuba1公開。</dd>
-					<dt>20XX/00/00<span class="icon-bg1">重要</span></dt>
-					<dd>サンプルテキスト。サンプルテキスト。サンプルテキスト。</dd>
-					<dt>20XX/00/00<span class="icon-bg2">サービス</span></dt>
-					<dd>サンプルテキスト。サンプルテキスト。サンプルテキスト。</dd>
-					<dt>20XX/00/00</dt>
-					<dd>サンプルテキスト。サンプルテキスト。サンプルテキスト。</dd>
-					<dt>20XX/00/00<span>その他</span></dt>
-					<dd>サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。</dd>
-					</dl>
-					<p class="r"><a href="#" class="btn1">もっと見る<i class="fas fa-arrow-circle-right"></i></a></p>
-				</section>
-				<section>
-					<h2>コンテンツ</h2>
-					<div class="list-grid">
-						<div class="list">
-							<div class="text">
-								<h4 class="bg-color1">
-									<a href="kurashi.html"><i class="fas fa-house-user"></i>暮らし</a>
-								</h4>
-								<div class="text">
-									<dl>
-										<dt>タイトル【2023/xx/xx】</dt>
-										<dd>ここに本文を入れます。サンプルテキスト。ここに本文を入れます。サンプルテキスト。</dd>
-									</dl>
-								</div>
-							<!--/.text-->
-							</div>
-							<!--/.text-->
-						</div>
-						<!--/.list-->
-						<div class="list">
-							<div class="text">
-								<h4 class="bg-color1">
-									<a href="kurashi.html"><i class="fas fa-house-user"></i>暮らし</a>
-								</h4>
-								<div class="text">
-									<dl>
-										<dt>タイトル【2023/xx/xx】</dt>
-										<dd>ここに本文を入れます。サンプルテキスト。ここに本文を入れます。サンプルテキスト。</dd>
-									</dl>
-								</div>
-							<!--/.text-->
-							</div>
-							<!--/.text-->
-						</div>
-						<!--/.list-->
-						<div class="list">
-							<div class="text">
-								<h4 class="bg-color1">
-									<a href="kurashi.html"><i class="fas fa-house-user"></i>暮らし</a>
-								</h4>
-								<div class="text">
-									<dl>
-										<dt>タイトル【2023/xx/xx】</dt>
-										<dd>ここに本文を入れます。サンプルテキスト。ここに本文を入れます。サンプルテキスト。</dd>
-									</dl>
-								</div>
-							<!--/.text-->
-							</div>
-							<!--/.text-->
-						</div>
-						<!--/.list-->
-						<div class="list">
-							<div class="text">
-								<h4 class="bg-color1">
-									<a href="kurashi.html"><i class="fas fa-house-user"></i>暮らし</a>
-								</h4>
-								<div class="text">
-									<dl>
-										<dt>タイトル【2023/xx/xx】</dt>
-										<dd>ここに本文を入れます。サンプルテキスト。ここに本文を入れます。サンプルテキスト。</dd>
-									</dl>
-								</div>
-							<!--/.text-->
-							</div>
-							<!--/.text-->
-						</div>
-						<!--/.list-->
-						<div class="list">
-							<div class="text">
-								<h4 class="bg-color1">
-									<a href="kurashi.html"><i class="fas fa-house-user"></i>暮らし</a>
-								</h4>
-								<div class="text">
-									<dl>
-										<dt>タイトル【2023/xx/xx】</dt>
-										<dd>ここに本文を入れます。サンプルテキスト。ここに本文を入れます。サンプルテキスト。</dd>
-									</dl>
-								</div>
-							<!--/.text-->
-							</div>
-							<!--/.text-->
-						</div>
-						<!--/.list-->
-						<div class="list">
-							<div class="text">
-								<h4 class="bg-color1">
-									<a href="kurashi.html"><i class="fas fa-house-user"></i>暮らし</a>
-								</h4>
-								<div class="text">
-									<dl>
-										<dt>タイトル【2023/xx/xx】</dt>
-										<dd>ここに本文を入れます。サンプルテキスト。ここに本文を入れます。サンプルテキスト。</dd>
-									</dl>
-								</div>
-							<!--/.text-->
-							</div>
-							<!--/.text-->
-						</div>
-						<!--/.list-->
-						<div class="list">
-						<div class="text">
-						<h4><i class="far fa-calendar-alt"></i>背景色なしでも使えます</h4>
-						<p>ここに説明を入れます。サンプルテキスト。ここに説明を入れます。サンプルテキスト。ここに説明を入れます。サンプルテキスト。<br>
-						ここに説明を入れます。サンプルテキスト。ここに説明を入れます。サンプルテキスト。ここに説明を入れます。サンプルテキスト。</p>
-						</div>
-						<!--/.text-->
-						</div>
-						<!--/.list-->
-						<div class="list">
-						<div class="text">
-						<h4><i class="far fa-calendar-alt"></i>背景色なしでも使えます</h4>
-						<p>ここに説明を入れます。サンプルテキスト。ここに説明を入れます。サンプルテキスト。ここに説明を入れます。サンプルテキスト。<br>
-						ここに説明を入れます。サンプルテキスト。ここに説明を入れます。サンプルテキスト。ここに説明を入れます。サンプルテキスト。</p>
-						</div>
-						<!--/.text-->
-						</div>
-						<!--/.list-->
-						<div class="list">
-						<div class="text">
-						<h4><i class="far fa-calendar-alt"></i>背景色なしでも使えます</h4>
-						<p>ここに説明を入れます。サンプルテキスト。ここに説明を入れます。サンプルテキスト。ここに説明を入れます。サンプルテキスト。<br>
-						ここに説明を入れます。サンプルテキスト。ここに説明を入れます。サンプルテキスト。ここに説明を入れます。サンプルテキスト。</p>
-						</div>
-						<!--/.text-->
-						</div>
-						<!--/.list-->
-					</div>
-					<!--/.list-grid-->
 				</section>
 			</main>
-			<main class="c2">
-				<div class="main">
-					<section>
-						<h2>お知らせ</h2>
-						<dl class="new">
-						<dt>20XX/00/00<span>その他</span></dt>
-						<dd>サンプルテキスト。サンプルテキスト。サンプルテキスト。</dd>
-						<dt>20XX/00/00<span class="icon-bg1">重要</span></dt>
-						<dd>サンプルテキスト。サンプルテキスト。サンプルテキスト。</dd>
-						<dt>20XX/00/00<span class="icon-bg2">サービス</span></dt>
-						<dd>サンプルテキスト。サンプルテキスト。サンプルテキスト。</dd>
-						<dt>20XX/00/00</dt>
-						<dd>サンプルテキスト。サンプルテキスト。サンプルテキスト。</dd>
-						<dt>20XX/00/00<span>その他</span></dt>
-						<dd>サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。</dd>
-						</dl>
-						<p class="r"><a href="#" class="btn1">もっと見る<i class="fas fa-arrow-circle-right"></i></a></p>
-					</section>
-					<section>
-						<h2>CMSのご案内</h2>
-						<p>2022年まで当サイトで販売窓口を行っていたCMSが、本来の開発者のサイトからの販売に切り替わりました。<br>
-						「お知らせ」向けの無料CMSもあります。<br>
-						<a href="https://q19cms.com/" target="_blank">&gt;&gt; クイックCMS様</a></p>
-						<p><a href="https://q19cms.com/" target="_blank"><img src="https://template-party.com/images/banner_q19.jpg" alt="CMSでWEBサイト構築をもっと手軽に"></a></p>
-					</section>
-				</div>
-				<!--/.main-->
-				<div class="sub">
-					<div class="box1">
-						<h3>見出し</h3>
-						<nav>
-							<ul class="submenu">
-								<li><a href="">サブメニュー</a></li>
-								<li><a href="">サブメニュー</a></li>
-								<li><a href="">サブメニュー</a></li>
-								<li><a href="">サブメニュー</a></li>
-								<li><a href="">サブメニュー</a></li>
-							</ul>
-						</nav>
-					</div>
-					<!--/.box1-->
-					<h3>見出し</h3>
-					<nav>
-					<ul class="submenu">
-					<li><a href="">サブメニュー</a></li>
-					<li><a href="">サブメニュー</a></li>
-					<li><a href="">サブメニュー</a></li>
-					<li><a href="">サブメニュー</a></li>
-					<li><a href="">サブメニュー</a></li>
-					</ul>
-					</nav>
-					<p class="img"><a href="#"><img src="../../assets/images/banner_1.jpg" alt=""></a></p>
-					<p class="img"><a href="#"><img src="../../assets/images/banner_2.jpg" alt=""></a></p>
-				</div>
-			<!--/.sub-->
-			</main>
-		</div>
-		<!--/#contents-->
-		<div id="footer-contents">
-			<div class="left">
-				<h3>東京九州市役所</h3>
-				<p>〒000-0000 東京九州市中央区XXXXXX1丁目1号<br>
-				代表電話：000-0000-0000<br>
-				開庁時間：月曜日から金曜日の9時00分から17時30分まで</p>
-				<table class="week">
-					<caption>〜〜〜の受付窓口</caption>
-					<tr>
-						<th>日</th>
-						<th>月</th>
-						<th>火</th>
-						<th>水</th>
-						<th>木</th>
-						<th>金</th>
-						<th>土</th>
-					</tr>
-					<tr>
-						<td>×</td>
-						<td>○</td>
-						<td>○</td>
-						<td>○</td>
-						<td>○</td>
-						<td>○</td>
-						<td>-</td>
-					</tr>
-				</table>
-			</div>
-			<!--/.left-->
-			<div class="right">
-				<p>市役所までのアクセス<br>
-				<a href="https://template-party.com/file/pickup_googlemap.html">GoogleMapの地図を変更する方法はマニュアルをご覧下さい。</a></p>
-				<div class="iframe-box">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.0448418561778!2d139.74267721573196!3d35.675897837870934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b89b2e1c8b1%3A0x59a123e3d5ac5ab6!2z44CSMTAwLTAwMTQg5p2x5Lqs6YO95Y2D5Luj55Sw5Yy65rC455Sw55S677yR5LiB55uu77yX4oiS77yR!5e0!3m2!1sja!2sjp!4v1545036128899" frameborder="0" style="border:0" allowfullscreen></iframe>
-				</div>
-			</div>
-			<!--/.right-->
-		</div>
-		<!--/#footer-contents-->
-		<div id="footermenu">
-			<ul>
-				<li class="title">メニュー見出し</li>
-				<li><a href="#">サンプルメニューサンプルメニュー</a></li>
-				<li><a href="#">サンプルメニュー</a></li>
-				<li><a href="#">サンプルメニュー</a></li>
-				<li><a href="#">サンプルメニュー</a></li>
-			</ul>
-			<ul>
-				<li class="title">メニュー見出し</li>
-				<li><a href="#">サンプルメニューサンプルメニュー</a></li>
-				<li><a href="#">サンプルメニュー</a></li>
-				<li><a href="#">サンプルメニュー</a></li>
-				<li><a href="#">サンプルメニュー</a></li>
-			</ul>
-			<ul>
-				<li class="title">メニュー見出し</li>
-				<li><a href="#">サンプルメニューサンプルメニュー</a></li>
-				<li><a href="#">サンプルメニュー</a></li>
-				<li><a href="#">サンプルメニュー</a></li>
-			</ul>
-			<ul>
-				<li class="title">メニュー見出し</li>
-				<li><a href="#">サンプルメニューサンプルメニューサンプルメニューサンプルメニュー</a></li>
-				<li><a href="#">サンプルメニュー</a></li>
-			</ul>
 		</div>
 	<!--/#footermenu-->
 		<footer>
@@ -318,17 +40,6 @@
 		<div class="pagetop"><a href="#"><i class="fas fa-angle-double-up"></i></a></div>
 	</div>
 	<!--/#container-->
-	<!--開閉ボタン（ハンバーガーアイコン）-->
-	<div id="menubar_hdr">
-		<span></span><span></span><span></span>
-	</div>
 	<!--jQueryの読み込み-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<!--文字サイズチェンジ用のスクリプト-->
-	<script src="/app/javascript/fontSizeChanger.js"></script>
-	<!--このテンプレート専用のスクリプト-->
-	<script src="/app/javascript/main.js"></script>
-	<!--スライドショー（slick）-->
-	<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-	<script src="/app/javascript/slick.js"></script>
 </body>
