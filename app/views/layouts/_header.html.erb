@@ -1,26 +1,37 @@
-<header>
-  <!--ロゴ-->
-  <h1 id="logo">
-    <a href="/">
-      <%= image_tag 'law_office_search.png', class: 'pc-logo' %><!--大きな端末用ロゴ-->
-      <%= image_tag 'law_office_search.png', class: 'sh-logo' %><!--小さな端末用ロゴ-->
-    </a>
-  </h1>
-  <!--ヘッダー中央コンテンツ-->
-  <div id="header-center">
-    <% if user_signed_in? %>
-      <div id="user_name">
-        <p class="">ユーザー:<%= @user.user_name %></p>
-        <%= link_to "マイページ",account_path(id: @user.id) %>
-        <%= link_to "ログアウト",destroy_user_session_path, method: :delete %>
-      </div> 
-    <% else %>
-      <div class="headerButton login">
-        <%= link_to "ログイン",new_user_session_path %>
-      </div>
-      <div class="headerButton newAccount">
-        <%= link_to "新規登録",new_user_registration_path %>
-      </div>
-    <% end %>
+<header class="site-header">
+  <div class="wrapper site-header__wrapper">
+    <a href="/" class="top-page-title">法律事務所ナビ</a>
+    <nav class="nav">
+      <button class="nav__toggle" aria-expanded="false" type="button">
+        menu
+      </button>
+      <% if user_signed_in? %>
+        <ul class="nav__wrapper">
+          <li class="nav__item"><%= link_to "マイページ",account_path(id: @user.id) %></li>
+          <li class="nav__item"><%= link_to "ログアウト",destroy_user_session_path, method: :delete %></li>
+        </ul>
+      <% else %>
+        <ul class="nav__wrapper">
+          <li class="nav__item"><%= link_to "ログイン",new_user_session_path %></li>
+          <li class="nav__item"><%= link_to "新規登録",new_user_registration_path %></li>
+        </ul>
+      <% end %>
+    </nav>
   </div>
+  <script>
+    let navToggle = document.querySelector(".nav__toggle");
+    let navWrapper = document.querySelector(".nav__wrapper");
+    
+    navToggle.addEventListener("click", function () {
+      if (navWrapper.classList.contains("active")) {
+        this.setAttribute("aria-expanded", "false");
+        this.setAttribute("aria-label", "menu");
+        navWrapper.classList.remove("active");
+      } else {
+        navWrapper.classList.add("active");
+        this.setAttribute("aria-label", "close menu");
+        this.setAttribute("aria-expanded", "true");
+      }
+    });
+  </script>
 </header>
