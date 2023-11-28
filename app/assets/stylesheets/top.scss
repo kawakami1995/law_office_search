@@ -1,3 +1,27 @@
 // Place all the styles related to the top controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.form {
+  text-align: center;
+}
+
+.selection-form {
+  display: inline;
+  align-items: center;
+}
+
+.select {
+  width: 50%;
+  height: 50px;
+  margin-top: 20px;
+  font-size: 25px;
+  text-align: center;
+}
+
+.actions {
+  width: 20%;
+  height: 50px;
+  margin-bottom: 10px;
+  vertical-align:middle;
+}
