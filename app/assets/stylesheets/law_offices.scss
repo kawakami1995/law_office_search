@@ -11,12 +11,23 @@ h1 {
   text-align: center;
 }
 
+.center-table {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
 .law-offices {
-  width: 100%;
+  width: 70%;
   border-collapse: collapse;
   border-top: 5px solid #333;
   border-right: 5px solid #333;
   border-left: 5px solid #333;
+  text-align: center;
+
+  @media screen and (max-width: 599px) {
+    width: 100%; // 画面の幅が599px以下の場合の幅
+  }
 
   th,
   td {
