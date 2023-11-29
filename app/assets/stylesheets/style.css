@@ -685,6 +685,8 @@ footer {
 	color: #fff;			/*文字色*/
 	text-align: center;		/*内容をセンタリング*/
 	padding: 20px;			/*ボックス内の余白*/
+	position: sticky;
+  top: 100vh;
 }
 
 /*リンクテキスト*/
