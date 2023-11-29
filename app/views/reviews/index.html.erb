@@ -1,0 +1,17 @@
+<% provide(:title, "投稿された口コミ一覧") %>
+<h2>投稿された口コミ一覧</h2>
+<div class="review">
+  <div class="review-box">
+    <div class="review-box-title">口コミ</div>
+    <table>
+      <% @reviews.each do |review| %>
+        <div class="review-area">
+          <%= image_tag "user_icon.png", class:  "user-icon" %><br>
+          <div class="review-text">
+            <%= review.review %>
+          </div>
+        </div>
+      <% end %>
+    </table>
+  </div>
+</div>

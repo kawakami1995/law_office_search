@@ -32,6 +32,7 @@ Rails.application.routes.draw do
   delete 'law_offices/:id/destroy', to: 'law_offices#destroy', as: 'law_office_destroy'
   get '/law_offices/search' ,to: 'law_offices#search'
 
+  get '/reviews/index' ,to: 'reviews#index'
   get '/reviews/new' ,to: 'reviews#new'
   post '/reviews/create' ,to: 'reviews#create', as: 'review_create'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

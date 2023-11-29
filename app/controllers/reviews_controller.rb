@@ -1,4 +1,9 @@
 class ReviewsController < ApplicationController
+  def index
+    @user = current_user
+    @reviews = Review.all
+  end
+
   def new
     @law_office = LawOffice.find(params[:law_office_id])
     if user_signed_in?
