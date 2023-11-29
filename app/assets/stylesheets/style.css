@@ -1158,11 +1158,3 @@ ul.slick-dots li.slick-active button {
 		.pc {display: block;}
 
 	}/*画面幅900px以上の追加指定ここまで*/
-
-	/*法律事務所詳細ページ
----------------------------------------------------------------------------*/
-.review{
-	display: flex;
-	line-height: 50px;
-	margin: 30px 0;
-}

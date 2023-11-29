@@ -54,6 +54,6 @@ class LawOfficesController < ApplicationController
 
   def search
     @user = current_user
-    @law_offices = LawOffice.where("address like ? and focus like ?", "#{params[:prefectures]}%", "#{params[:focus]}" )
+    @law_offices = LawOffice.where("address like ? and focus like ?", "#{params[:prefectures]}%", "%#{params[:focus]}%" )
   end
 end
