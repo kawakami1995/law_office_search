@@ -1,8 +1,19 @@
-<% provide(:title, "ユーザー情報") %>
-<h1>ユーザー情報</h1>
-<%= @user.user_name %>
-<%= link_to "変更", user_name_edit_path %><br>
-<%= @user.email %>
-<%= link_to "変更", email_edit_path %><br>
-<%= link_to "アカウントを削除する", user_destroy_confirm_path %>
-
+<% provide(:title, "マイページ") %>
+<h1>マイページ</h1>
+<div class="center-table">
+  <table border="1" class="user-account">
+    <tr>
+      <th>ユーザー名</th>
+      <th><%= @user.user_name %></th>
+      <th class="edit-path"><%= link_to "変更", user_name_edit_path %></th>
+    </tr>
+    <tr>
+      <th>メールアドレス</th>
+      <th><%= @user.email %></th>
+      <th class="edit-path"><%= link_to "変更", user_name_edit_path %></th>
+    </tr>
+  </table>
+</div>
+<div class="account-delete-button">
+  <button><%= link_to "アカウントを削除する", user_destroy_confirm_path %></button>
+</div>

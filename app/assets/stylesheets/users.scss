@@ -1,3 +1,67 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.center-table {
+  margin: 0 0;
+}
+
+.user-account {
+  width: 50%;
+  border-collapse: collapse;
+  border-top: 1.5px solid #333;
+  border-right: 1.5px solid #333;
+  border-left: 1.5px solid #333;
+  border-bottom: 1.5px solid #333;;
+  text-align: center;
+
+  @media screen and (max-width: 599px) {
+    width: 100%;
+  }
+
+  th,
+  td {
+    padding: 16px;
+    font-weight: normal;
+    border-top: 1.5px solid #333;
+    border-bottom: 1.5px solid #333;
+    border-left: 1.5px solid #333;
+    border-right: 1.5px solid #333;
+    text-align: center;
+  }
+
+  th {
+    background-color: #CDEAFF;
+  }
+}
+
+.account {
+  width: 50%;
+
+  @media screen and (max-width: 599px) {
+    width: fit-content;
+  }
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.edit-path {
+  white-space: nowrap;
+}
+
+.account-delete-button {
+  text-align: center;
+  margin-top: 20px;
+
+  button {
+    font-size: 20px;
+  }
+}
