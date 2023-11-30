@@ -149,3 +149,18 @@ h1 {
   border-bottom: 1px solid #333;
   align-items: center;
 }
+
+.center-form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.focus-select {
+  font-size: 20px;
+}
+
+.center-form p {
+  margin-top: 0;
+}
