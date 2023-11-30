@@ -26,4 +26,11 @@ class ReviewsController < ApplicationController
       render "new"
     end
   end
+
+  def destroy
+    @user = current_user
+    @review = Review.find_by(id: params[:id])
+    @review.destroy
+    redirect_to reviews_index_path
+  end
 end

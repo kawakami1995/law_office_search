@@ -5,3 +5,17 @@
 h2 {
   text-align: center;
 }
+
+.review-area {
+  display: flex;
+  align-items: center;
+}
+
+.review-text {
+  flex-grow: 1;
+}
+
+.delete-button {
+  margin-left: auto;
+  white-space: nowrap;
+}

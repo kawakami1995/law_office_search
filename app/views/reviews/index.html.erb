@@ -10,6 +10,7 @@
           <div class="review-text">
             <%= review.review %>
           </div>
+          <button class="delete-button"><%= link_to '削除', review_destroy_path(id: review.id), method: :delete %></button>
         </div>
       <% end %>
     </table>
