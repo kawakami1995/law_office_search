@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def account
     @user = current_user
+    @reviews = Review.where(user_id: @user.id)
   end
 
   def user_name_edit

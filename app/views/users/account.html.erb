@@ -10,10 +10,23 @@
     <tr>
       <th>メールアドレス</th>
       <th><%= @user.email %></th>
-      <th class="edit-path"><%= link_to "変更", user_name_edit_path %></th>
+      <th class="edit-path"><%= link_to "変更", email_edit_path %></th>
     </tr>
   </table>
 </div>
 <div class="account-delete-button">
   <button><%= link_to "アカウントを削除する", user_destroy_confirm_path %></button>
+</div>
+<div class="review-box">
+  <div class="review-box-title">投稿した口コミ</div>
+  <table>
+    <% @reviews.each do |review| %>
+      <div class="review-area">
+        <%= image_tag "user_icon.png", class:  "user-icon" %><br>
+        <div class="review-text">
+          <%= review.review %>
+        </div>
+      </div>
+    <% end %>
+  </table>
 </div>
