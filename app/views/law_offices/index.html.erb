@@ -1,34 +1,37 @@
 <% provide(:title, "法律事務所一覧") %>
 <h1>法律事務所一覧</h1>
-<table class="law-offices">
-  <% @law_offices.each do |law_office| %>
-    <tr>
-      <th>法律事務所名</th>
-      <td><%= law_office.office_name %></td>
-    </tr>
-    <tr>
-      <th>担当弁護士</th>
-      <td><%= law_office.representative_lawyer_name %></td>
-    </tr>
-    <tr>
-      <th>住所</th>
-      <td><%= law_office.address %></td>
-    </tr>
-    <tr>
-      <th>電話番号</th>
-      <td><%= law_office.phone_number %></td>
-    </tr>
-    <tr>
-      <th>営業時間</th>
-      <td><%= law_office.business_hours %></td>
-    </tr>
-    <tr class="bottom">
-      <th>その他</th>
-      <td>
-        <%= link_to '詳細', law_office_show_path(id: law_office.id) %>
-        <%= link_to '変更', law_office_edit_path(id: law_office.id) %>
-        <%= link_to '削除', law_office_destroy_confirm_path(id: law_office.id) %>
-      </td>
-    </tr>
-  <% end %>
-</table>
+<div class="center-table">
+  <table class="law-offices">
+    <% @law_offices.each do |law_office| %>
+      <tr>
+        <th class="category-name">法律事務所名</th>
+        <td><%= law_office.office_name %></td>
+      </tr>
+      <tr>
+        <th class="category-name">担当弁護士</th>
+        <td><%= law_office.representative_lawyer_name %></td>
+      </tr>
+      <tr>
+        <th class="category-name">住所</th>
+        <td><%= law_office.address %></td>
+      </tr>
+      <tr>
+        <th class="category-name">電話番号</th>
+        <td><%= law_office.phone_number %></td>
+      </tr>
+      <tr>
+        <th class="category-name">営業時間</th>
+        <td><%= law_office.business_hours %></td>
+      </tr>
+      <tr class="bottom">
+        <th>その他</th>
+        <td>
+          <%= link_to '詳細', law_office_show_path(id: law_office.id) %>
+          <%= link_to '変更', law_office_edit_path(id: law_office.id) %>
+          <%= link_to '削除', law_office_destroy_confirm_path(id: law_office.id) %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
