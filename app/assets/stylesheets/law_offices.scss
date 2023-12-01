@@ -169,3 +169,21 @@ h1 {
 .center-form p {
   margin-top: 0;
 }
+
+.confirm {
+  text-align: center;
+
+  p {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 20px;
+  }
+  
+  button {
+    font-size: 20px;
+  }
+}
+
+.destroy-button {
+  margin-bottom: 1em;
+}
