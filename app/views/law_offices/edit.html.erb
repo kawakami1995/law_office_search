@@ -1,67 +1,61 @@
 <% provide(:title, "法律事務所情報変更") %>
-<h1>法律事務所情報変更</h1>
+<h2>法律事務所情報変更</h2>
+<div class="center-form">
+  <%= form_with model: @law_office, url: law_office_update_path, method: :patch, id: @law_office.id, html: {multipart: true} ,local: true do |f| %>
+    <%= render "shared/error", obj: @law_office %> 
 
-<%= form_with model: @law_office, url: law_office_update_path, method: :patch, id: @law_office.id, html: {multipart: true} ,local: true do |f| %>
-  <%= render "shared/error", obj: @law_office %> 
+    <p>※すべての項目を入力してください</p>
 
-  <p>※すべての項目を入力してください</p>
+    <div class="field">
+      <%= f.label :法律事務所名 %><br>
+      <%= f.text_field :office_name, autofocus: true, autocomplete: "room_name" %><br>
+    </div>
 
-  <div class="field">
-    <%= f.label :法律事務所名 %><br>
-    <%= f.text_field :office_name, autofocus: true, autocomplete: "room_name" %><br>
-  </div>
+    <div class="field">
+      <%= f.label :代表弁護士 %><br>
+      <%= f.text_field :representative_lawyer_name, autocomplete: "room_detail" %><br>
+    </div>
 
-  <div class="field">
-    <%= f.label :代表弁護士 %><br>
-    <%= f.text_field :representative_lawyer_name, autocomplete: "room_detail" %><br>
-  </div>
+    <div class="field">
+      <%= f.label :注力分野 %><br>
+      <%= f.select :focus,['離婚・男女問題','相続','インターネット','労働問題','国際・外国人問題','税務','刑事事件','企業法務','借金','交通事故','消費者被害','債権回収','医療','行政事件','不動産・建築','その他'],{ include_blank: '選択してください' }, class: "focus-select" %><br>
+    </div>
 
-  <div class="field">
-    <%= f.label :注力分野 %><br>
-    <%= f.select :focus,['離婚・男女問題','相続','インターネット','労働問題','国際・外国人問題','税務','刑事事件','企業法務','借金','交通事故','消費者被害','債権回収','医療','行政事件','不動産・建築','その他'] %><br>
-  </div>
+    <div class="field">
+      <%= f.label :郵便番号（ハイフンなし） %><br>
+      <%= f.text_field :postal_code, autocomplete: "price"%>
+    </div>  
 
-  <div class="field">
-    <%= f.label :郵便番号（ハイフンなし） %><br>
-    <%= f.text_field :postal_code, autocomplete: "price"%>
-  </div>  
+    <div class="field">
+      <%= f.label :住所 %><br>
+      <%= f.text_field :address, autocomplete: "address"%>
+    </div>  
 
-  <div class="field">
-    <%= f.label :住所 %><br>
-    <%= f.text_field :address, autocomplete: "address"%>
-  </div>  
+    <div class="field">
+      <%= f.label :電話番号 %><br>
+      <%= f.text_field :phone_number, autocomplete: "address"%>
+    </div>
 
-  <div class="field">
-    <%= f.label :緯度 %><br>
-    <%= f.text_field :latitude, autocomplete: "address"%>
-  </div>
-  
-  <div class="field">
-    <%= f.label :経度 %><br>
-    <%= f.text_field :longitude, autocomplete: "address"%>
-  </div>
+    <div class="field">
+      <%= f.label :営業時間 %><br>
+      <%= f.text_field :business_hours, autocomplete: "address"%>
+    </div>
 
-  <div class="field">
-    <%= f.label :電話番号 %><br>
-    <%= f.text_field :phone_number, autocomplete: "address"%>
-  </div>
+    <div class="field">
+      <%= f.label :事務所URL %><br>
+      <%= f.text_field :office_url, autocomplete: "address"%>
+    </div>
 
-  <div class="field">
-    <%= f.label :営業時間 %><br>
-    <%= f.text_field :business_hours, autocomplete: "address"%>
-  </div>
+    <div class="field">
+      <%= f.hidden_field :id, autocomplete: "id", value: @law_office.id %>
+    </div>
 
-  <div class="field">
-    <%= f.label :事務所URL %><br>
-    <%= f.text_field :office_url, autocomplete: "address"%>
-  </div>
+    <div>
+      <%= f.submit "更新する",class: "submit"%>
+    </div>
 
-  <div class="field">
-    <%= f.hidden_field :id, autocomplete: "id", value: @law_office.id %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "更新する"%>
-  </div>  
-<% end %> 
-<%= link_to "戻る", :back %>
+    <div>
+      <%= link_to "戻る", :back %>
+    </div>
+  <% end %> 
+</div>
