@@ -26,6 +26,14 @@ h1 {
   text-align: center;
 }
 
+ul {
+  list-style: none;
+
+  @media screen and (max-width: 320px) {
+    font-size: 15px;
+  }
+}
+
 .center-table {
   display: flex;
   justify-content: center;
