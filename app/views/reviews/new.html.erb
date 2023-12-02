@@ -1,23 +1,25 @@
 <% provide(:title, "口コミ投稿") %>
-<h1>口コミ投稿</h1>
+<h2>口コミ投稿</h2>
+<div class="center-form">
+  <%= form_with model: @review, url: review_create_path, html: {multipart: true} ,local: true do |f| %>
+    <%= render "shared/error", obj: @review %> 
 
-<%= form_with model: @review, url: review_create_path, html: {multipart: true} ,local: true do |f| %>
-  <%= render "shared/error", obj: @review %> 
+    <div class="field text-area">
+      <%= f.text_area :review, autocomplete: "review", size: "40x10" %>
+    </div>  
 
-  <div class="field">
-    <%= f.text_field :user_id, autofocus: true, autocomplete: "user_id", value: @user.id %><br>
-  </div>
+    <div class="actions">
+      <%= f.submit "投稿"%>
+    </div>
+    
+    <button><%= link_to "戻る", law_office_show_path(id: @law_office.id) %></button>
 
-  <div class="field">
-    <%= f.text_field :law_office_id, autocomplete: "law_office_id", value: @law_office.id %><br>
-  </div>
+    <div class="field">
+      <%= f.hidden_field :user_id, autofocus: true, autocomplete: "user_id", value: @user.id %><br>
+    </div>
 
-  <div class="field">
-    <%= f.text_area :review, autocomplete: "review"%>
-  </div>  
-
-  <div class="actions">
-    <%= f.submit "投稿"%>
-    <button><%= link_to "戻る", law_office_show_path(id: @law_office.id) %></button> 
-  </div>
-<% end %>
+    <div class="field">
+      <%= f.hidden_field :law_office_id, autocomplete: "law_office_id", value: @law_office.id %><br>
+    </div>
+  <% end %>
+</div>
