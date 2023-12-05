@@ -2,10 +2,10 @@
 <h2>ユーザー名編集</h2>
 <div class="user-name-edit">
   <%= form_with model: @user, url: user_name_update_path do |f| %>
-  <%= render "shared/error", obj: @user %>
+    <%= render "shared/error", obj: @user %>
     <div>
       <%= f.label :ユーザー名 %><br>
-      <%= f.text_field :user_name %>
+      <%= f.text_field :user_name ,id: "user-name-form" %>
     </div>
     <div>
       <%= f.submit "更新" ,class: "submit" %>

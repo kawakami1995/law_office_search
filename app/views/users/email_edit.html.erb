@@ -5,7 +5,7 @@
     <%= render "shared/error", obj: @user %>
     <div>
       <%= f.label :新しいメールアドレス %><br>
-      <%= f.text_field :email %>
+      <%= f.text_field :email, id: "email-form" %>
     </div>
     <div>
       <%= f.submit "更新" ,class: "submit" %>
