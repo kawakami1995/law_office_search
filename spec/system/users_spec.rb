@@ -72,7 +72,7 @@ RSpec.describe 'Users', type: :system do
       fill_in 'user-name-form', with: 'naruhodo'
       click_button '更新'
       within '.user-account' do
-        expect(page).to have_content ('naruhodo')
+        expect(page).to have_content('naruhodo')
       end
     end
   end
@@ -83,8 +83,35 @@ RSpec.describe 'Users', type: :system do
       fill_in 'email-form', with: 'naruhodo@gmail.com'
       click_button '更新'
       within '.user-account' do
-        expect(page).to have_content ('naruhodo@gmail.com')
+        expect(page).to have_content('naruhodo@gmail.com')
       end
+    end
+  end
+
+  describe 'GET #destroy_confirm' do
+    before do
+      visit user_destroy_confirm_path(@user1.id)
+    end
+
+    it 'アカウント削除確認画面にアクセスできる' do
+      expect(page).to have_content('このアカウントを削除しますか？')
+    end
+
+    it '削除しようとしているアカウントのユーザー名が表示されている' do
+      expect(page).to have_content(@user1.user_name)
+    end
+
+    it '削除しようとしているアカウントのメールアドレスが表示されている' do
+      expect(page).to have_content(@user1.email)
+    end
+  end
+
+  describe 'DELETE #user_destroy' do
+    it 'アカウントを削除することができる' do
+      visit user_destroy_confirm_path(@user1.id)
+      expect(User.exists?(@user1.id)).to be_truthy
+      click_link 'アカウントを削除する'
+      expect(User.exists?(@user1.id)).to be_falsey
     end
   end
 end
