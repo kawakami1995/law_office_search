@@ -3,47 +3,45 @@
 <div class="center-form">
   <%= form_with model: @law_office, url: law_office_update_path, method: :patch, id: @law_office.id, html: {multipart: true} ,local: true do |f| %>
     <%= render "shared/error", obj: @law_office %> 
-
     <p>※すべての項目を入力してください</p>
-
     <div class="field">
       <%= f.label :法律事務所名 %><br>
-      <%= f.text_field :office_name, autofocus: true, autocomplete: "room_name" %><br>
+      <%= f.text_field :office_name, autofocus: true, autocomplete: "office-name", id: "office-name" %><br>
     </div>
 
     <div class="field">
       <%= f.label :代表弁護士 %><br>
-      <%= f.text_field :representative_lawyer_name, autocomplete: "room_detail" %><br>
+      <%= f.text_field :representative_lawyer_name, autocomplete: "representative-lawyer-name", id: "representative-lawyer-name" %><br>
     </div>
 
     <div class="field">
       <%= f.label :注力分野 %><br>
-      <%= f.select :focus,['離婚・男女問題','相続','インターネット','労働問題','国際・外国人問題','税務','刑事事件','企業法務','借金','交通事故','消費者被害','債権回収','医療','行政事件','不動産・建築','その他'],{ include_blank: '選択してください' }, class: "focus-select" %><br>
+      <%= f.select :focus,['離婚・男女問題','相続','インターネット','労働問題','国際・外国人問題','税務','刑事事件','企業法務','借金','交通事故','消費者被害','債権回収','医療','行政事件','不動産・建築','その他'],{ include_blank: '選択してください' }, class: "focus-select", id: "focus-select" %><br>
     </div>
 
     <div class="field">
       <%= f.label :郵便番号（ハイフンなし） %><br>
-      <%= f.text_field :postal_code, autocomplete: "price"%>
+      <%= f.text_field :postal_code, autocomplete: "postal-code", id: "postal-code" %>
     </div>  
 
     <div class="field">
       <%= f.label :住所 %><br>
-      <%= f.text_field :address, autocomplete: "address"%>
+      <%= f.text_field :address, autocomplete: "address", id: "address" %>
     </div>  
 
     <div class="field">
       <%= f.label :電話番号 %><br>
-      <%= f.text_field :phone_number, autocomplete: "address"%>
+      <%= f.text_field :phone_number, autocomplete: "phone-number", id: "phone-number" %>
     </div>
 
     <div class="field">
       <%= f.label :営業時間 %><br>
-      <%= f.text_field :business_hours, autocomplete: "address"%>
+      <%= f.text_field :business_hours, autocomplete: "business-hours", id: "business-hours" %>
     </div>
 
     <div class="field">
       <%= f.label :事務所URL %><br>
-      <%= f.text_field :office_url, autocomplete: "address"%>
+      <%= f.text_field :office_url, autocomplete: "office-url", id: "office-url" %>
     </div>
 
     <div class="field">
