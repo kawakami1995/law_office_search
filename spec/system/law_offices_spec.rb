@@ -106,6 +106,10 @@ RSpec.describe 'Law_offices', type: :system do
       expect(page).to have_link(@law_office1.office_name, href: @law_office1.office_url)
     end
 
+    it 'GoogleMapが表示されている' do
+      expect(page).to have_css('#google-map')
+    end
+
     it 'ユーザーアイコンと該当する法律事務所の口コミが表示される' do
       within('.review') do
         expect(page).to have_css('.user-icon')
