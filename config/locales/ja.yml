@@ -18,6 +18,7 @@ ja:
         phone_number: 電話番号
         business_hours: 営業時間
         office_url: 事務所URL
+        focus: 注力分野
 
       review:
         review: レビュー

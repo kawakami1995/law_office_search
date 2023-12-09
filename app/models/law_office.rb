@@ -5,9 +5,10 @@ class LawOffice < ApplicationRecord
   validates :representative_lawyer_name, presence: true
   validates :postal_code, presence: true, numericality: {only_integer: true}, length: { is: 7 }
   validates :address, presence: true
-  validates :phone_number, presence: true
+  validates :phone_number, presence: true, format: { with: /\A[\d\-]+\z/, message: "は半角数字またはハイフンのみ入力できます" }
   validates :business_hours, presence: true
   validates :office_url, presence: true
+  validates :focus, presence: true
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
 end
