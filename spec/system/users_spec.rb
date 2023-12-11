@@ -5,7 +5,7 @@ RSpec.describe 'Users', type: :system do
     @user1 = FactoryBot.create(:user1)
     sign_in @user1
   end
-
+  
   describe 'GET #account' do
     before do
       @review1 = FactoryBot.create(:review1)
