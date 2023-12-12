@@ -93,7 +93,6 @@ a:hover {
 	display: flex;	/*flexボックスを使う指定*/
 	flex-direction: column;	/*子要素を縦並びにする*/
 	justify-content: space-between;	/*並びかたの種類の指定*/
-	max-width: 1800px;	/*サイトの最大幅。これ以上広がらない。*/
 	margin: 0 auto;
 }
 
@@ -102,7 +101,6 @@ a:hover {
 ---------------------------------------------------------------------------*/
 #contents {
 	flex: 1;
-	padding: 0 3% 100px;	/*上、左右、下への余白。下の余白は、ここのbackgroundの画像読み込み分に、適当な余白をプラスして指定しています。*/
 	background: url(../images/footer_bg.png) repeat-x center bottom / auto 50px;	/*下部の背景画像の読み込み。最後の50pxというのが画像の高さの指定部分です。*/
 }
 
@@ -434,7 +432,7 @@ a.ddmenu::before {
 ---------------------------------------------------------------------------*/
 /*mainブロックの設定*/
 main {
-	margin: 2rem 0;	/*ブロックの外側に空けるスペース*/
+	width: 100%;
 }
 
 	/*画面幅900px以上の追加指定*/

@@ -23,3 +23,34 @@
   height: 50px;
   font-size: 25px;
 }
+
+.top {
+  display: flex;
+  justify-content: center;
+  height: 50%;
+  background-color: #c0c0c0;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+
+  @media screen and (max-width: 399px) {
+    h2 {
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 13px;
+    }
+  }
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  img {
+    max-height: 100%;
+    width: auto;
+  }
+}
