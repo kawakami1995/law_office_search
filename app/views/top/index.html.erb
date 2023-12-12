@@ -24,8 +24,8 @@
 					<h2>事務所名から探す</h2>
 					<%= form_with model: @law_office, url: law_offices_search_path, method: :get, class: "form", html: {multipart: true} ,local: true do |f| %>
 						<div class="selection-form">
-							<%= f.text_field :office_name,class: "text_field", id: 'focus-select-prefectures'%>
-							<%= f.submit "検索", class: "enter", id: "enter-prefecture" %>
+							<%= f.text_field :office_name,class: "text_field", id: 'focus-select-office-name'%>
+							<%= f.submit "検索", class: "enter", id: "enter-office-name" %>
 						</div>
 					<% end %>
 				</section>

@@ -237,6 +237,14 @@ RSpec.describe 'Law_offices', type: :system do
       visit root_path
     end
 
+    it '入力した事務所名と合致する法律事務所の件数および情報が表示される' do
+      fill_in 'focus-select-office-name', with: '成歩堂法律事務所'
+      click_button '検索', id: 'enter-office-name'
+      expect(page).to have_content("1件見つかりました")
+      expect(page).to have_content(@law_office1.office_name)
+      expect(page).not_to have_content(@law_office2.office_name)
+    end
+
     it '選択した都道府県と合致する法律事務所の件数および情報が表示される' do
       select '東京都', from: 'focus-select-prefectures'
       click_button '検索', id: 'enter-prefecture'
