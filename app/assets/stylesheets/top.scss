@@ -19,6 +19,14 @@
   text-align: center;
 }
 
+.text_field {
+  width: 50%;
+  height: 45px;
+  margin-top: 20px;
+  font-size: 25px;
+  text-align: center;
+}
+
 .enter {
   height: 50px;
   font-size: 25px;
@@ -27,7 +35,7 @@
 .top {
   display: flex;
   justify-content: center;
-  height: 50%;
+  height: 44%;
   background-color: #c0c0c0;
 }
 
@@ -37,7 +45,7 @@
 
   @media screen and (max-width: 399px) {
     h2 {
-      font-size: 18px;
+      font-size: 17px;
     }
 
     p {

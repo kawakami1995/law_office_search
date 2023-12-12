@@ -21,7 +21,16 @@
 		<div id="contents">
 			<main>
 				<section>
-					<h2>都道府県で探す</h2>
+					<h2>事務所名から探す</h2>
+					<%= form_with model: @law_office, url: law_offices_search_path, method: :get, class: "form", html: {multipart: true} ,local: true do |f| %>
+						<div class="selection-form">
+							<%= f.text_field :office_name,class: "text_field", id: 'focus-select-prefectures'%>
+							<%= f.submit "検索", class: "enter", id: "enter-prefecture" %>
+						</div>
+					<% end %>
+				</section>
+				<section>
+					<h2>都道府県から探す</h2>
 					<%= form_with model: @law_office, url: law_offices_search_path, method: :get, class: "form", html: {multipart: true} ,local: true do |f| %>
 						<div class="selection-form">
 							<%= f.select :prefectures, 
