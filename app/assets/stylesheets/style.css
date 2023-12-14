@@ -145,7 +145,7 @@ footer {
 	background: #000;		/*背景色*/
 	color: #fff;			/*文字色*/
 	text-align: center;		/*内容をセンタリング*/
-	position: sticky;
+	position: relative;
 	bottom: 0;
 	width: 100%;
 	padding: 10px 0;
