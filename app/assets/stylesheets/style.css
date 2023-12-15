@@ -14,6 +14,8 @@ body {
 	line-height: 2;
 	border-top: 5px solid #4d88ff;
 	animation: opa1 0.3s 0.5s both;
+	height: 105vh;
+  margin: 0; /* デフォルトのマージンを削除するため */
 }
 
 /*table全般の設定*/
@@ -41,14 +43,12 @@ a {
 	display: flex;	/*flexボックスを使う指定*/
 	flex-direction: column;	/*子要素を縦並びにする*/
 	justify-content: space-between;	/*並びかたの種類の指定*/
-	margin: 0 auto;
 }
 
 /*コンテンツ（フッター関連「以外」を囲むブロック）
 ---------------------------------------------------------------------------*/
 #contents {
 	flex: 1;
-	background: url(../images/footer_bg.png) repeat-x center bottom / auto 50px;	/*下部の背景画像の読み込み。最後の50pxというのが画像の高さの指定部分です。*/
 }
 
 /*header（ロゴが入った最上段のブロック）

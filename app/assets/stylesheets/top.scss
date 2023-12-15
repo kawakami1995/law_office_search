@@ -37,7 +37,7 @@
   background-color: #c0c0c0;
 }
 
-.left {
+.top-left {
   display: flex;
   align-items: center;
 
@@ -52,11 +52,49 @@
   }
 }
 
-.right {
+.top-right {
   display: flex;
   align-items: center;
   img {
     max-height: 100%;
     width: auto;
+  }
+}
+
+.top-page-bottom {
+  display: flex;
+  justify-content: center;
+  height: 30%;
+  margin: 10px 0;
+}
+
+.top-page-bottom-left {
+  display: flex;
+  align-items: center;
+
+  @media screen and (max-width: 399px) {
+    h2 {
+      font-size: 17px;
+    }
+
+    p {
+      font-size: 13px;
+    }
+  }
+}
+
+.top-page-bottom-right {
+  display: flex;
+  align-items: center;
+}
+
+#top-page-bottom-image-icon {  
+  max-height: 100%;
+  width: auto;
+}
+
+.top-page-bottom-text {
+  p {
+    font-size: 20px;
   }
 }
