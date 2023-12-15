@@ -15,7 +15,7 @@ body {
 	border-top: 5px solid #4d88ff;
 	animation: opa1 0.3s 0.5s both;
 	height: 105vh;
-  margin: 0; /* デフォルトのマージンを削除するため */
+  margin: 0;
 }
 
 /*table全般の設定*/
@@ -141,11 +141,10 @@ main h2 {
 /*フッター設定
 ---------------------------------------------------------------------------*/
 footer {
-	font-size: 0.6rem;		/*文字サイズ。bodyのfont-sizeの60%です。*/
 	background: #000;		/*背景色*/
 	color: #fff;			/*文字色*/
 	text-align: center;		/*内容をセンタリング*/
-	position: relative;
+	max-height: 100vh;
 	bottom: 0;
 	width: 100%;
 	padding: 10px 0;
