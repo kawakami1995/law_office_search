@@ -148,6 +148,13 @@ footer {
 	bottom: 0;
 	width: 100%;
 	padding: 10px 0;
+	position: fixed;
+}
+
+@media screen and (max-width: 599px){
+	footer {
+		position: relative;
+	}
 }
 
 /*リンクテキスト*/

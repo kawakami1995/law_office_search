@@ -34,9 +34,13 @@ ul {
   }
 }
 
-.center-table {
+.law-offices-center-table {
   display: flex;
   justify-content: center;
+
+  @media screen and (max-width: 599px) {
+    position: relative;
+  }
 }
 
 .law-offices {
@@ -49,12 +53,13 @@ ul {
   text-align: center;
   margin-bottom: 20px;
   
-  th {
-    text-align: center;
-  }
-
   @media screen and (max-width: 599px) {
     width: 100%;
+    margin-bottom: 0;
+  }
+
+  th {
+    text-align: center;
   }
 
   th,
