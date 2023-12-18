@@ -37,10 +37,21 @@ ul {
 .law-offices-center-table {
   display: flex;
   justify-content: center;
+  padding-bottom: 100px;
 
   @media screen and (max-width: 599px) {
     position: relative;
   }
+}
+
+.show {
+  @media screen and (max-width: 599px) {
+    padding-bottom: 0 !important; 
+  }
+}
+
+.destroy-confirm {
+  padding-bottom: 0 !important;
 }
 
 .law-offices {
@@ -99,10 +110,6 @@ ul {
 
   h2 {
     text-align: center;
-  }
-
-  @media screen and (max-width: 599px) {
-    padding-bottom: 0;
   }
 }
 
@@ -178,6 +185,10 @@ ul {
   justify-content: center;
   margin-bottom: 20px;
   text-align: center;
+
+  @media screen and (max-width: 599px) {
+    padding-bottom: 100px;
+  }
 }
 
 .focus-select {
@@ -190,6 +201,7 @@ ul {
 
 .confirm {
   text-align: center;
+  padding-bottom: 100px;
 
   p {
     margin-top: 0;
