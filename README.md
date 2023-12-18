@@ -3,6 +3,8 @@
 法律事務所の営業時間、所在地（Googleマップ）、口コミなどを確認することができます。<br>
 また、ログインすれば各事務所に口コミを投稿することができます。
 
+<img width="1425" alt="スクリーンショット 2023-12-18 17 57 27" src="https://github.com/kawakami1995/law_office_search/assets/127808281/93897d5b-bb35-4f03-ae22-40d3b2a342c8">
+
 ## URL
 https://law-office-search-e86cd269003b.herokuapp.com/
 
