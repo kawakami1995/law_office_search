@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'top#index'
+  post '/top/guest_sign_in', to: 'top#guest_sign_in'
   
   get '/users/account', to: 'users#account', as: 'account'
   get '/users/account/user_name_edit',to: 'users#user_name_edit', as: 'user_name_edit'
