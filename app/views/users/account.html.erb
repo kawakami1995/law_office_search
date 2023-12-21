@@ -17,6 +17,41 @@
 <div class="account-delete-button">
   <button><%= link_to "アカウントを削除する", user_destroy_confirm_path %></button>
 </div>
+<div class="favorite">
+  <h2>お気に入り登録中</h2>
+  <div class="user-favorite-table">
+    <table class="favorites">
+      <% @law_offices.each do |law_office| %>
+        <tr>
+          <th>法律事務所名</th>
+          <td><%= law_office.office_name %></td>
+        </tr>
+        <tr>
+          <th>担当弁護士</th>
+          <td><%= law_office.representative_lawyer_name %></td>
+        </tr>
+        <tr>
+          <th>住所</th>
+          <td><%= law_office.address %></td>
+        </tr>
+        <tr>
+          <th>電話番号</th>
+          <td><%= law_office.phone_number %></td>
+        </tr>
+        <tr>
+          <th>営業時間</th>
+          <td><%= law_office.business_hours %></td>
+        </tr>
+        <tr class="bottom">
+          <th>事務所詳細</th>
+          <td>
+            <%= link_to '詳細', law_office_show_path(id: law_office.id) %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
 <div class="review">
   <div class="review-box">
     <div class="review-box-title">投稿した口コミ</div>
