@@ -37,5 +37,8 @@ Rails.application.routes.draw do
   get '/reviews/new' ,to: 'reviews#new'
   post '/reviews/create' ,to: 'reviews#create', as: 'review_create'
   delete 'reviews/:id/destroy', to: 'reviews#destroy', as: 'review_destroy'
+
+  post '/favorites/create', to: 'favorites#create'
+  delete '/favorites/destroy', to: 'favorites#destroy'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

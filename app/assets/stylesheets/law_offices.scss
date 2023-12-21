@@ -221,3 +221,24 @@ ul {
 .alert {
   text-align: center;
 }
+
+.law-office-name {
+  margin-bottom: 0;
+}
+
+.favorite {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.favorite-on {
+  color: #fff;
+  background-color: #4d88ff;
+  border-style: none;
+
+  &:hover{
+    color: #fff;
+    background: #4d88ff;
+    cursor: pointer;
+  }
+}

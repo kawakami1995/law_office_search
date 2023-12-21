@@ -1,5 +1,16 @@
 <% provide(:title, "法律事務所詳細") %>
-<h2><%= @law_office.office_name %></h2>
+<h2 class="law-office-name"><%= @law_office.office_name %></h2>
+<div class="favorite">
+  <div class="favorite-button">
+    <% if @user.nil? && @favorite.nil?  %>
+      <%= button_to 'お気に入り登録（ログインしていない）', favorites_create_path, method: :post, class: 'favorite-off' %>
+    <% elsif @favorite.nil? %>
+      <%= button_to 'お気に入り登録（ログインしている）', favorites_create_path, method: :post, params: { user_id: @user.id, law_office_id: @law_office.id }, class: 'favorite-off' %>
+    <% else %>
+      <%= button_to 'お気に入り解除', favorites_destroy_path, method: :delete, params: { user_id: @user.id, law_office_id: @law_office.id }, class: 'favorite-on' %>
+    <% end %>
+  </div>
+</div>
 <div class="alert" style="color: red;"><%= alert %></div>
 <div class="law-offices-center-table  show">
   <table class="law-offices">
