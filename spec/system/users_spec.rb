@@ -33,6 +33,16 @@ RSpec.describe 'Users', type: :system do
         expect(page).not_to have_content @review3.review
         expect(page).not_to have_content @review4.review
       end
+
+      it 'お気に入り登録した事務所の情報のみが表示される' do
+        @law_office1 = FactoryBot.create(:law_office1)
+        @law_office2 = FactoryBot.create(:law_office2)
+        visit law_office_show_path(@law_office1.id)
+        click_button 'お気に入り登録'
+        visit account_path(@user1.id)
+        expect(page).to have_content @law_office1.office_name
+        expect(page).not_to have_content @law_office2.office_name
+      end
     end
   end
 
