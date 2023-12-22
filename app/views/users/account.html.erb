@@ -1,5 +1,5 @@
-<% provide(:title, "マイページ") %>
-<h2>マイページ</h2>
+<% provide(:title, "アカウント情報") %>
+<h2 class="my-page-h2">アカウント情報</h2>
 <div class="users-center-table">
   <table border="1" class="user-account">
     <tr>
@@ -18,7 +18,7 @@
   <button><%= link_to "アカウントを削除する", user_destroy_confirm_path %></button>
 </div>
 <div class="favorite">
-  <h2>お気に入り登録中</h2>
+  <h2 class="my-page-h2">お気に入り登録中</h2>
   <div class="user-favorite-table">
     <table class="favorites">
       <% @law_offices.each do |law_office| %>
