@@ -50,4 +50,4 @@ https://law-office-search-e86cd269003b.herokuapp.com/
 ## テスト
 - RSpec
   - 単体テスト(model)
-  - 機能テスト(request)
+  - 結合テスト(system)
