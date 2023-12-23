@@ -2,9 +2,9 @@
 <h2 class="law-office-name"><%= @law_office.office_name %></h2>
 <div class="favorite">
   <div class="favorite-button">
-    <% if @user.nil? && @favorite.nil?  %>
+    <% if @user.nil? %>
       <%= button_to 'お気に入り登録', favorites_create_path, method: :post, class: 'favorite-off off-1' %>
-    <% elsif @favorite.nil? %>
+    <% elsif @user.present? && @favorite.nil? %>
       <%= button_to 'お気に入り登録', favorites_create_path, method: :post, params: { user_id: @user.id, law_office_id: @law_office.id }, class: 'favorite-off off-2' %>
     <% else %>
       <%= button_to 'お気に入り解除', favorites_destroy_path, method: :delete, params: { user_id: @user.id, law_office_id: @law_office.id }, class: 'favorite-on' %>

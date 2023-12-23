@@ -23,9 +23,7 @@ class LawOfficesController < ApplicationController
     @user = current_user
     @law_office = LawOffice.find_by(id: params[:id])
     @reviews = Review.where(law_office_id: @law_office.id)
-    if @user.nil?
-      @favorite = nil
-    else
+    if @user.present?
       @favorite = Favorite.find_by(user_id: @user.id, law_office_id: @law_office.id)
     end
   end
