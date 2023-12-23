@@ -41,8 +41,11 @@ https://law-office-search-e86cd269003b.herokuapp.com/
     <img width="1436" alt="スクリーンショット 法律事務所詳細" src="https://github.com/kawakami1995/law_office_search/assets/127808281/2912c081-99a2-43c8-b076-2d2d6043aa6a">
     <img width="1435" alt="スクリーンショット 法律事務所詳細2" src="https://github.com/kawakami1995/law_office_search/assets/127808281/47d221ea-d4a9-4ba6-b0a3-1a11601e8b88">
     <img width="1440" alt="スクリーンショット 法律事務所詳細3" src="https://github.com/kawakami1995/law_office_search/assets/127808281/7a355cb2-b0d4-4e2c-b169-39b6c19aa82d">
-- 口コミ投稿機能
 - お気に入り登録機能
+  <img width="1440" alt="スクリーンショット お気に入り登録" src="https://github.com/kawakami1995/law_office_search/assets/127808281/e50ef40c-140c-468d-86fb-2f4594d7b430">
+  <img width="1440" alt="スクリーンショット お気に入り登録2" src="https://github.com/kawakami1995/law_office_search/assets/127808281/3b3b4278-d49f-4d94-bc3e-3ba8950d8f27">
+- 口コミ投稿機能
+  <img width="1440" alt="スクリーンショット 口コミ投稿" src="https://github.com/kawakami1995/law_office_search/assets/127808281/72033a47-b079-4093-9389-a9fe76205797">
 
 ## テスト
 - RSpec
