@@ -22,4 +22,16 @@ FactoryBot.define do
     law_office_id { 2 }
     review { '弁護士からの返事は遅いです。' }
   end
+
+  factory :review5, class: Review do
+    user_id { 1 }
+    law_office_id { 2 }
+    review { 'ありがとうございました。' }
+  end
+
+  factory :review6, class: Review do
+    user_id { 2 }
+    law_office_id { 2 }
+    review { '二度と利用しません。' }
+  end
 end
