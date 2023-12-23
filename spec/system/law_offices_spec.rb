@@ -130,6 +130,67 @@ RSpec.describe 'Law_offices', type: :system do
         expect(page).not_to have_content(@review4.review)
       end
     end
+
+    context 'ユーザーがログインしていない場合' do
+      before do
+        sign_out @user1 if @user1
+        visit law_office_show_path(id: @law_office1.id)
+      end
+  
+      it 'お気に入り登録ボタン(class: off-1)が表示される' do
+        expect(page).to have_button('お気に入り登録', class: 'off-1')
+      end
+
+      it 'お気に入り登録ボタン(class: off-2)が非表示' do
+        expect(page).not_to have_button('お気に入り登録', class: 'off-2')
+      end
+  
+      it 'お気に入り解除ボタンが非表示' do
+        expect(page).not_to have_button('お気に入り解除')
+      end
+
+      it 'お気に入り登録ボタンを押した場合、ログイン画面に遷移される' do
+        click_button 'お気に入り登録' 
+        expect(page).to have_current_path(users_sign_in_path)
+      end
+    end
+
+    context 'ユーザーがログインしている場合' do
+      before do
+        @user1 = FactoryBot.create(:user1)
+        sign_in @user1
+        visit law_office_show_path(id: @law_office1.id)
+      end
+
+      context '既に事務所をお気に入り登録している場合' do
+        before do
+          click_button 'お気に入り登録'
+        end
+
+        it 'お気に入り解除のボタンが表示されている' do
+          expect(page).to have_button('お気に入り解除')
+        end
+
+        it 'お気に入り登録ボタンは表示されていない' do
+          expect(page).not_to have_button('お気に入り登録', class: 'off-1')
+          expect(page).not_to have_button('お気に入り登録', class: 'off-2')
+        end
+      end
+
+      context '事務所のお気に入り登録をしていない場合' do
+        it 'お気に入り登録ボタン（off-2）が表示される' do
+          expect(page).to have_button('お気に入り登録', class: 'off-2')
+        end
+  
+        it 'お気に入り登録ボタン（off-1）は表示されない' do
+          expect(page).not_to have_button('お気に入り登録', class: 'off-1')
+        end
+  
+        it 'お気に入り解除ボタンは表示されない' do
+          expect(page).not_to have_button('お気に入り解除', class: 'favorite-on')
+        end
+      end
+    end
   end
 
   describe 'GET #edit' do

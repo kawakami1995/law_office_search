@@ -3,9 +3,9 @@
 <div class="favorite">
   <div class="favorite-button">
     <% if @user.nil? && @favorite.nil?  %>
-      <%= button_to 'お気に入り登録', favorites_create_path, method: :post, class: 'favorite-off' %>
+      <%= button_to 'お気に入り登録', favorites_create_path, method: :post, class: 'favorite-off off-1' %>
     <% elsif @favorite.nil? %>
-      <%= button_to 'お気に入り登録', favorites_create_path, method: :post, params: { user_id: @user.id, law_office_id: @law_office.id }, class: 'favorite-off' %>
+      <%= button_to 'お気に入り登録', favorites_create_path, method: :post, params: { user_id: @user.id, law_office_id: @law_office.id }, class: 'favorite-off off-2' %>
     <% else %>
       <%= button_to 'お気に入り解除', favorites_destroy_path, method: :delete, params: { user_id: @user.id, law_office_id: @law_office.id }, class: 'favorite-on' %>
     <% end %>
