@@ -25,6 +25,10 @@ https://law-office-search-e86cd269003b.herokuapp.com/
 - RuboCop
 - Google Maps API
 
+## 全体設計
+![law_office_search_インフラ構成図](https://github.com/kawakami1995/law_office_search/assets/127808281/d2c360cf-d5d4-492a-aa6e-214576017492)
+![law_office_search_ER](https://github.com/kawakami1995/law_office_search/assets/127808281/fc846c53-839c-452a-8d5f-50aa005f7ce7)
+
 ## 機能一覧
 - ログイン機能(devise)
   - サインアップ・サイインイン・ログアウト
