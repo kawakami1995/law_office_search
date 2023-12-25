@@ -71,7 +71,7 @@
 			<div class="review-box">
 				<div class="review-box-title">口コミ</div>
 				<table>
-					<% @reviews.each do |review| %>
+					<% @reviews.each do |review| %>						
 						<div class="review-area">
 							<%= image_tag "user_icon.png", class:  "user-icon" %><br>
 							<div class="review-text">
@@ -81,7 +81,11 @@
 								<span class="review-law-office-name">
 									<%= link_to review.law_office.office_name, law_office_show_path(review.law_office) %><br>
 								</span>
-								<%= review.review %>
+								<% if @user.present? %>
+									<%= review.review %>
+								<% else %>
+									<p>ログインをすると口コミを見ることができます。</p>
+								<% end %>		
 							</div>
 						</div>
 					<% end %>
