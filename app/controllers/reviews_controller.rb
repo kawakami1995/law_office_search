@@ -45,6 +45,10 @@ class ReviewsController < ApplicationController
     @user = current_user
     @review = Review.find_by(id: params[:id])
     @review.destroy
-    redirect_to reviews_index_path
+    if params[:redirect_path]
+      redirect_to params[:redirect_path]
+    else
+      redirect_back(fallback_location: reviews_index_path)
+    end
   end
 end

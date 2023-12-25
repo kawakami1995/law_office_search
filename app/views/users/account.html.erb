@@ -62,7 +62,10 @@
           <div class="review-text">
             <%= review.review %>
           </div>
-          <div class="edit-button"><button><%= link_to '編集', review_edit_path(id: review.id, user_id: review.user_id) %></button></div>
+          <div class="review-buttons">
+            <div class="edit-button"><button><%= link_to '編集', review_edit_path(id: review.id, user_id: review.user_id) %></button></div>
+            <div class="delete-button"><button class="delete-button"><%= link_to '削除', review_destroy_path(id: review.id), method: :delete %></button></div>
+          </div>
         </div>
       <% end %>
     </table>
