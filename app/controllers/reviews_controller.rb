@@ -27,6 +27,20 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def edit
+    @user = current_user
+    @review = Review.find_by(id: params[:id])
+  end
+
+  def update
+    @review = Review.find(params[:id])
+    if @review.update(params.require(:review).permit(:user_id, :law_office_id, :review))
+      redirect_to account_path(@review.user_id)
+    else
+      render "new"
+    end
+  end
+
   def destroy
     @user = current_user
     @review = Review.find_by(id: params[:id])
