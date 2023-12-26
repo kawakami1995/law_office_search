@@ -4,6 +4,12 @@
   <%= form_with model: @review, url: review_create_path, html: {multipart: true} ,local: true do |f| %>
     <%= render "shared/error", obj: @review %> 
 
+    <div class="field" id="star">
+      <%= f.label :star, '評価' %>
+      <%= f.hidden_field :star, id: :review_star %>
+      <div id="post_raty"></div>
+    </div>
+
     <div class="field text-area">
       <%= f.text_area :review, autocomplete: "review", size: "40x10", id: "review" %>
     </div>  
@@ -22,4 +28,20 @@
       <%= f.hidden_field :law_office_id, autocomplete: "law_office_id", value: @law_office.id %><br>
     </div>
   <% end %>
+
+  <script>
+    $(document).on('turbolinks:load', function() {
+      let elem = document.querySelector('#post_raty');
+      if(elem == null) return;
+
+      elem.innerHTML = ""
+      let opt = {
+        starOn: "<%= asset_path('star-on.png') %>",
+        starOff: "<%= asset_path('star-off.png') %>",
+        starHalf: "<%= asset_path('star-half.png') %>",
+        scoreName: 'review[star]',
+      };
+      raty(elem, opt);
+    });
+  </script>
 </div>
