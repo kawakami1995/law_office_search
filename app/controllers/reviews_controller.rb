@@ -15,7 +15,7 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @review = Review.new(params.require(:review).permit(:user_id, :law_office_id, :review))
+    @review = Review.new(params.require(:review).permit(:user_id, :law_office_id, :review, :star))
     if @review.save
       redirect_to law_office_show_path(@review.law_office_id)
     else
@@ -34,7 +34,7 @@ class ReviewsController < ApplicationController
 
   def update
     @review = Review.find(params[:id])
-    if @review.update(params.require(:review).permit(:user_id, :law_office_id, :review))
+    if @review.update(params.require(:review).permit(:user_id, :law_office_id, :review, :star))
       redirect_to account_path(@review.user_id)
     else
       render "new"

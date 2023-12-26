@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   delete '/users/account/destroy', to: 'users#destroy', as: 'user_destroy'
 
   get "/users/sign_in",to:"devise/sessions#new"
-  post "/users/sign_in",to:"evise/sessions#create"
+  post "/users/sign_in",to:"devise/sessions#create"
   delete "/users/sign_out",to:"devise/sessions#destroy"
   get "/users/password/new",to:"devise/passwords#new"
   get "/users/password/edit",to:"devise/passwords#edit"
