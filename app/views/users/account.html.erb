@@ -60,6 +60,12 @@
         <div class="review-area">
           <%= image_tag "user_icon.png", class:  "user-icon" %><br>
           <div class="review-text">
+            <span class="review-created-at">
+              <%= review.created_at.strftime("%Y年%m月%d日")%>
+            </span>
+            <span class="review-law-office-name">
+              <%= link_to review.law_office.office_name, law_office_show_path(review.law_office) %><br>
+            </span>
             <%= review.review %>
           </div>
           <div class="review-buttons">
