@@ -1,18 +1,18 @@
 <script>
   $(document).on('turbolinks:load', function() {
     <% @reviews.each do |review| %>
-      let elem = document.querySelector('#star_<%= review.id %>');
-      if (elem == null) return;
+      let elem_<%= review.id %> = document.querySelector('#star_<%= review.id %>');
+      if (elem_<%= review.id %> == null) return;
 
-      elem.innerHTML = "";
-      let opt = {  
+      elem_<%= review.id %>.innerHTML = "";
+      let opt_<%= review.id %> = {  
         starOn: "<%= asset_path('star-on.png') %>",
         starOff: "<%= asset_path('star-off.png') %>",
         starHalf: "<%= asset_path('star-half.png') %>",
         score: "<%= review.star %>",
         readOnly: true,
       };
-      raty(elem, opt);
+      raty(elem_<%= review.id %>, opt_<%= review.id %>);
     <% end %>
   });
 </script>

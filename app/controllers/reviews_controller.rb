@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
   def index
     @user = current_user
-    @reviews = Review.all
+    @reviews = Review.all.order(created_at: :desc)
   end
 
   def new
