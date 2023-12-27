@@ -81,6 +81,7 @@
 								<span class="review-law-office-name">
 									<%= link_to review.law_office.office_name, law_office_show_path(review.law_office) %><br>
 								</span>
+								<div class="review-star-read" id="star_<%= review.id%>"></div>
 								<% if @user.present? %>
 									<%= review.review %>
 								<% else %>
@@ -88,6 +89,7 @@
 								<% end %>		
 							</div>
 						</div>
+						<%= render partial: 'layouts/starDisplay', locals: { review: @review } %>
 					<% end %>
 				</table>
 			</div>
