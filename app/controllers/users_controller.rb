@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def account
     @user = current_user
-    @reviews = Review.where(user_id: @user.id).order(created_at: :desc)
+    @reviews = Review.where(user_id: @user.id).order(updated_at: :desc)
     @favorites = Favorite.where(user_id: @user.id)
     favorite_ids = Favorite.where(user_id: @user.id).pluck(:law_office_id)
     @law_offices = LawOffice.includes(:reviews)

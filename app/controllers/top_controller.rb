@@ -1,7 +1,7 @@
 class TopController < ApplicationController
   def index
     @user = current_user
-    @reviews = Review.order(created_at: :desc).limit(5)
+    @reviews = Review.order(updated_at: :desc).limit(5)
   end
 
   def guest_sign_in
