@@ -1,5 +1,6 @@
 FactoryBot.define do
   factory :review1, class: Review do
+    association :law_office, factory: :law_office1
     user_id { 1 }
     law_office_id { 1 }
     review { '先生のお陰で勝訴することができました。' }
@@ -7,6 +8,7 @@ FactoryBot.define do
   end
 
   factory :review2, class: Review do
+    association :law_office, factory: :law_office2
     user_id { 1 }
     law_office_id { 2 }
     review { '真剣に対応してもらえなかった気がします' }
@@ -14,6 +16,7 @@ FactoryBot.define do
   end
 
   factory :review3, class: Review do
+    association :law_office, factory: :law_office1
     user_id { 2 }
     law_office_id { 1 }
     review { '休日や夜間にも対応してもらえました。' }
@@ -21,6 +24,7 @@ FactoryBot.define do
   end
 
   factory :review4, class: Review do
+    association :law_office, factory: :law_office2
     user_id { 2 }
     law_office_id { 2 }
     review { '弁護士からの返事は遅いです。' }
@@ -28,6 +32,7 @@ FactoryBot.define do
   end
 
   factory :review5, class: Review do
+    association :law_office, factory: :law_office2
     user_id { 1 }
     law_office_id { 2 }
     review { 'ありがとうございました。' }
@@ -35,6 +40,7 @@ FactoryBot.define do
   end
 
   factory :review6, class: Review do
+    association :law_office, factory: :law_office2
     user_id { 2 }
     law_office_id { 2 }
     review { '二度と利用しません。' }
