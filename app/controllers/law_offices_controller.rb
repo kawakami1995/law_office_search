@@ -25,7 +25,7 @@ class LawOfficesController < ApplicationController
   def show
     @user = current_user
     @law_office = LawOffice.find_by(id: params[:id])
-    @reviews = Review.where(law_office_id: @law_office.id)
+    @reviews = Review.where(law_office_id: @law_office.id).order(updated_at: :desc)
     average_star_value = @reviews.average(:star)
 
     if average_star_value.present?
@@ -73,7 +73,7 @@ class LawOfficesController < ApplicationController
                   .where("office_name like ? and address like ? and focus like ?", "%#{params[:office_name]}%", "#{params[:prefectures]}%", "%#{params[:focus]}%" )
                   .group('law_offices.id')
                   .select('law_offices.*, COALESCE(AVG(reviews.star), 0) AS average_star')
-                  
+
     case params[:sort]
     when 'address'
       @law_offices = @law_offices.order(:postal_code)
