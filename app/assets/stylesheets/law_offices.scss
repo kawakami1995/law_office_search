@@ -42,6 +42,10 @@ ul {
   span {
     font-weight: bold;
   }
+
+  @media screen and (max-width: 599px) {
+    width: 100%;
+  }
 }
 
 .law-offices-center-table {
