@@ -73,7 +73,16 @@ class LawOfficesController < ApplicationController
                   .where("office_name like ? and address like ? and focus like ?", "%#{params[:office_name]}%", "#{params[:prefectures]}%", "%#{params[:focus]}%" )
                   .group('law_offices.id')
                   .select('law_offices.*, COALESCE(AVG(reviews.star), 0) AS average_star')
-                  .order(:postal_code)
+                  
+    case params[:sort]
+    when 'address'
+      @law_offices = @law_offices.order(:postal_code)
+    when 'review'
+      @law_offices = @law_offices.order('average_star DESC')
+    else
+      @law_offices = @law_offices.order(:postal_code)
+    end
+
     @law_offices_count = LawOffice.where("office_name like ? and address like ? and focus like ?", "%#{params[:office_name]}%", "#{params[:prefectures]}%", "%#{params[:focus]}%").pluck(:id).count
   end
 end
