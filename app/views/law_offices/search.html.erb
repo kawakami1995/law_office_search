@@ -1,5 +1,5 @@
 <% provide(:title, "法律事務所検索結果") %>
-<h1><%= @law_offices.count %>件見つかりました</h1>
+<h1><%= @law_offices_count %>件見つかりました</h1>
 <div class="law-offices-center-table">
   <table class="law-offices">
     <% @law_offices.each do |law_office| %>
@@ -22,6 +22,15 @@
       <tr>
         <th>営業時間</th>
         <td><%= law_office.business_hours %></td>
+      </tr>
+      <tr>
+        <th class="category-name">評価</th>
+        <td>
+          <div class="average">
+            <span class="average-star"><%= image_tag asset_path('star-on.png') %></span>
+            <span class="average-score"><%= law_office.average_star.floor(1) %> </span>
+          </div>
+        </td>
       </tr>
       <tr class="bottom">
         <th>事務所詳細</th>

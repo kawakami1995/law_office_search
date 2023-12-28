@@ -3,8 +3,13 @@ class UsersController < ApplicationController
     @user = current_user
     @reviews = Review.where(user_id: @user.id).order(created_at: :desc)
     @favorites = Favorite.where(user_id: @user.id)
-    favorite_ids = @favorites.pluck(:law_office_id)
-    @law_offices = LawOffice.where(id: favorite_ids).order(:postal_code)
+    favorite_ids = Favorite.where(user_id: @user.id).pluck(:law_office_id)
+    @law_offices = LawOffice.includes(:reviews)
+                            .left_joins(:reviews)
+                            .where(id: favorite_ids)
+                            .group('law_offices.id')
+                            .select('law_offices.*, COALESCE(AVG(reviews.star), 0) AS average_star')
+                            .order(:postal_code)
   end
 
   def user_name_edit
