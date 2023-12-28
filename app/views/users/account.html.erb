@@ -42,6 +42,15 @@
           <th>営業時間</th>
           <td><%= law_office.business_hours %></td>
         </tr>
+        <tr>
+          <th class="category-name">評価</th>
+          <td>
+            <div class="average">
+              <span class="average-star"><%= image_tag asset_path('star-on.png') %></span>
+              <span class="average-score"><%= law_office.average_star.floor(1) %> </span>
+            </div>
+          </td>
+        </tr>
         <tr class="bottom">
           <th>事務所詳細</th>
           <td>

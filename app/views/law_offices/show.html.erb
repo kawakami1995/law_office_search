@@ -35,6 +35,15 @@
       <td><%= @law_office.business_hours %></td>
     </tr>
     <tr>
+      <th class="category-name">評価</th>
+      <td>
+        <div class="average">
+          <span class="average-star"><%= image_tag asset_path('star-on.png') %></span>
+          <span class="average-score"><%= @average_star.floor(1) %> </span>
+        </div>
+      </td>
+    </tr>
+    <tr>
       <th>ホームページ</th>
       <td><a href="<%= @law_office.office_url %>"><%= @law_office.office_name %></a></td>
     </tr>
