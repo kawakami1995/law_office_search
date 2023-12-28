@@ -110,6 +110,14 @@ RSpec.describe 'Law_offices', type: :system do
       expect(page).to have_css('#google-map')
     end
 
+    it 'ユーザーアイコン、レビューの星、口コミの更新日が表示されている' do
+      within('.review-box') do
+        expect(page).to have_css('.user-icon')
+        expect(page).to have_content(@review1.updated_at.strftime("%Y年%m月%d日"))
+        expect(page).to have_css('.review-star-read')
+      end
+    end
+
     context 'ログインしている場合' do
       before do
         @user1 = FactoryBot.create(:user1)
@@ -117,9 +125,9 @@ RSpec.describe 'Law_offices', type: :system do
         visit law_offices_index_path
         click_link('詳細', href: law_office_show_path(id: @law_office1.id))
       end
-      it 'ユーザーアイコンと該当する法律事務所の口コミが表示される' do
+
+      it '該当する法律事務所の口コミが表示される' do
         within('.review') do
-          expect(page).to have_css('.user-icon')
           expect(page).to have_content(@review1.review)
           expect(page).to have_content(@review3.review)
         end
@@ -130,10 +138,6 @@ RSpec.describe 'Law_offices', type: :system do
       it '「ログインをすると口コミを見ることができます。」と表示されている' do
         expect(page).to have_content("ログインをすると口コミを見ることができます。")
       end
-    end
-
-    it '口コミの投稿年月日が表示されている' do
-      expect(page).to have_content(@review1.created_at.strftime("%Y年%m月%d日"))
     end
 
     it '該当しない法律事務所の詳細は表示されない' do

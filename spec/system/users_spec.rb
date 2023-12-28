@@ -8,6 +8,8 @@ RSpec.describe 'Users', type: :system do
   
   describe 'GET #account' do
     before do
+      @law_office1 = FactoryBot.create(:law_office1)
+      @law_office2 = FactoryBot.create(:law_office2)
       @review1 = FactoryBot.create(:review1)
       @review2 = FactoryBot.create(:review2)
       @review3 = FactoryBot.create(:review3)
@@ -22,6 +24,19 @@ RSpec.describe 'Users', type: :system do
 
       it 'メールアドレスが表示されている' do
         expect(page).to have_content @user1.email
+      end
+
+      it '口コミのリンクが正しく表示されている' do
+        expect(page).to have_link(@review1.law_office.office_name, href: law_office_show_path(@review1.law_office))
+        expect(page).to have_link(@review2.law_office.office_name, href: law_office_show_path(@review2.law_office))
+      end
+  
+      it 'ユーザーアイコン、レビューの星、口コミの更新日が表示されている' do
+        within('.review-box') do
+          expect(page).to have_css('.user-icon')
+          expect(page).to have_content(@review1.updated_at.strftime("%Y年%m月%d日"))
+          expect(page).to have_css('.review-star-read')
+        end
       end
 
       it 'ユーザーIDに合致する口コミが表示されている' do
@@ -40,8 +55,10 @@ RSpec.describe 'Users', type: :system do
         visit law_office_show_path(@law_office1.id)
         click_button 'お気に入り登録'
         visit account_path(@user1.id)
-        expect(page).to have_content @law_office1.office_name
-        expect(page).not_to have_content @law_office2.office_name
+        within '.favorite' do
+          expect(page).to have_content @law_office1.office_name
+          expect(page).not_to have_content @law_office2.office_name
+        end
       end
     end
   end

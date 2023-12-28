@@ -37,6 +37,10 @@ class ReviewsController < ApplicationController
     if @review.update(params.require(:review).permit(:user_id, :law_office_id, :review, :star))
       redirect_to account_path(@review.user_id)
     else
+      @user = User.new
+      @law_office = LawOffice.new
+      @user.id = @review.user_id
+      @law_office.id = @review.law_office_id
       render "new"
     end
   end
