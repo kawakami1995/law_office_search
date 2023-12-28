@@ -28,8 +28,12 @@ RSpec.describe 'top', type: :system do
       expect(page).to have_link(@review2.law_office.office_name, href: law_office_show_path(@review2.law_office))
     end
 
-    it '口コミの投稿年月日が表示されている' do
-      expect(page).to have_content(@review1.created_at.strftime("%Y年%m月%d日"))
+    it 'ユーザーアイコン、レビューの星、口コミの更新日が表示されている' do
+      within('.review-box') do
+        expect(page).to have_css('.user-icon')
+        expect(page).to have_content(@review1.updated_at.strftime("%Y年%m月%d日"))
+        expect(page).to have_css('.review-star-read')
+      end
     end
 
     it '口コミの法律事務所名をクリックすると該当する法律事務所の詳細ページに遷移する' do
