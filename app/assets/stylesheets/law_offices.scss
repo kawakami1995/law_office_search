@@ -34,6 +34,16 @@ ul {
   }
 }
 
+.sorting {
+  width: 80%;
+  text-align: right;
+  margin: 0 auto;
+
+  span {
+    font-weight: bold;
+  }
+}
+
 .law-offices-center-table {
   display: flex;
   justify-content: center;
