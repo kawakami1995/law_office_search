@@ -33,7 +33,7 @@
         <td>
           <div class="average">
             <span class="average-star"><%= image_tag asset_path('star-on.png') %></span>
-            <span class="average-score"><%= law_office.average_star.floor(1) %> </span>
+            <span class="average-score"><%= law_office.average_star.to_f.floor(1) %> </span>
           </div>
         </td>
       </tr>
