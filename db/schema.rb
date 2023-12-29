@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_12_26_032511) do
+ActiveRecord::Schema.define(version: 2023_12_29_112808) do
 
   create_table "favorites", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -41,8 +41,8 @@ ActiveRecord::Schema.define(version: 2023_12_26_032511) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.text "review"
-    t.text "user_id"
-    t.text "law_office_id"
+    t.integer "user_id"
+    t.integer "law_office_id"
     t.float "star"
   end
 
