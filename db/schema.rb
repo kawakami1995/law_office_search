@@ -40,9 +40,9 @@ ActiveRecord::Schema.define(version: 2023_12_26_032511) do
   create_table "reviews", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "user_id"
-    t.string "law_office_id"
     t.text "review"
+    t.text "user_id"
+    t.text "law_office_id"
     t.float "star"
   end
 
@@ -61,4 +61,6 @@ ActiveRecord::Schema.define(version: 2023_12_26_032511) do
 
   add_foreign_key "favorites", "law_offices"
   add_foreign_key "favorites", "users"
+  add_foreign_key "reviews", "users", column: "user_id"
+  add_foreign_key "reviews", "law_offices", column: "law_office_id"
 end
