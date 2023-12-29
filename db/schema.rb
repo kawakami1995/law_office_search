@@ -41,11 +41,8 @@ ActiveRecord::Schema.define(version: 2023_12_26_032511) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.text "review"
-<<<<<<< HEAD
     t.text "user_id"
     t.text "law_office_id"
-=======
->>>>>>> 8c9c4679de8dcf2e83dbf5b9d8ec5a6a6632ed2c
     t.float "star"
   end
 
@@ -64,6 +61,4 @@ ActiveRecord::Schema.define(version: 2023_12_26_032511) do
 
   add_foreign_key "favorites", "law_offices"
   add_foreign_key "favorites", "users"
-  add_foreign_key "reviews", "users", column: "user_id"
-  add_foreign_key "reviews", "law_offices", column: "law_office_id"
 end
