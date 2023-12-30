@@ -12,9 +12,12 @@
 
 ActiveRecord::Schema.define(version: 2023_12_29_112808) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "favorites", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "law_office_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "law_office_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["law_office_id"], name: "index_favorites_on_law_office_id"
@@ -40,9 +43,9 @@ ActiveRecord::Schema.define(version: 2023_12_29_112808) do
   create_table "reviews", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.text "review"
     t.integer "user_id"
     t.integer "law_office_id"
+    t.text "review"
     t.float "star"
   end
 
