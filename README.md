@@ -41,9 +41,11 @@ https://law-office-search-e86cd269003b.herokuapp.com/
     <img width="1440" alt="スクリーンショット ログイン" src="https://github.com/kawakami1995/law_office_search/assets/127808281/ebd25955-665d-4cd8-b020-19e0053777cb">
 - マイページ
   - メールアドレス・ユーザーネーム編集
-    <img width="1427" alt="スクリーンショット マイページ" src="https://github.com/kawakami1995/law_office_search/assets/127808281/c7cc1751-8656-4406-be57-6a2cf267a859">
+    <img width="1422" alt="スクリーンショット マイページ" src="https://github.com/kawakami1995/law_office_search/assets/127808281/a9177b7b-9780-4ca8-9216-6a633c1c6955">
+  - お気に入り登録中の事務所情報
+    <img width="1417" alt="スクリーンショット マイページ3" src="https://github.com/kawakami1995/hotel_reservation/assets/127808281/654c34f3-edf9-48e1-af0d-5c76324e517c">
   - 投稿した口コミ
-    <img width="1440" alt="スクリーンショット マイページ2" src="https://github.com/kawakami1995/law_office_search/assets/127808281/ae11c6b5-159c-4316-b9e5-771442e4771b">
+    <img width="1427" alt="スクリーンショット マイページ2" src="https://github.com/kawakami1995/law_office_search/assets/127808281/2a6752f4-44b2-497c-9069-6bc0cb8fcd4d">
 - 法律事務所検索機能
   - 検索結果一覧（住所順）
     <img width="1420" alt="スクリーンショット 検索結果一覧" src="https://github.com/kawakami1995/law_office_search/assets/127808281/5f0eca16-1721-48af-80ef-b6dd91d5b2e5">
@@ -54,7 +56,7 @@ https://law-office-search-e86cd269003b.herokuapp.com/
     <img width="1428" alt="スクリーンショット 法律事務所詳細2" src="https://github.com/kawakami1995/law_office_search/assets/127808281/93cd6e5b-082e-4e70-b745-1b094c2a391c">
     <img width="1427" alt="スクリーンショット 法律事務所詳細3" src="https://github.com/kawakami1995/law_office_search/assets/127808281/b67ccb3b-59c7-4651-81a9-543247e394f6">
 - お気に入り登録機能
-  <img width="1440" alt="スクリーンショット お気に入り登録" src="https://github.com/kawakami1995/law_office_search/assets/127808281/e50ef40c-140c-468d-86fb-2f4594d7b430">
+  <img width="1426" alt="スクリーンショット お気に入り登録" src="https://github.com/kawakami1995/law_office_search/assets/127808281/1692286c-06ff-484e-bb8f-30f69ab4f2dc">
   <img width="1424" alt="スクリーンショット お気に入り登録2" src="https://github.com/kawakami1995/law_office_search/assets/127808281/9198d15e-5ae7-42a5-9853-753456a8f29e">
 - 口コミ投稿機能
   <img width="1425" alt="スクリーンショット 口コミ投稿" src="https://github.com/kawakami1995/law_office_search/assets/127808281/f463f84a-76e7-4a82-bf3d-9e4f8b68fa56">
