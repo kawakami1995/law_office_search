@@ -27,7 +27,7 @@ https://law-office-search-e86cd269003b.herokuapp.com/
 
 ## 全体設計
 ![law_office_search_インフラ構成図](https://github.com/kawakami1995/law_office_search/assets/127808281/d2c360cf-d5d4-492a-aa6e-214576017492)
-![law_office_search_ER drawio](https://github.com/kawakami1995/law_office_search/assets/127808281/3d01ea83-2bfe-4e08-b8d2-3ea6fb76b6cd)
+![law_office_search_ER drawio](https://github.com/kawakami1995/law_office_search/assets/127808281/06a109e9-4cb8-426a-a91a-930841b39164)
 
 ## 機能
 - トップページ
