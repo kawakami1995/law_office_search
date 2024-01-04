@@ -8,4 +8,9 @@ module ApplicationHelper
       "#{page_title} - #{BASE_TITLE}"
     end
   end
+
+  def sort_class(column)
+    return 'sort-link active' if params[:sort] == column.to_s
+    'sort-link'
+  end
 end
