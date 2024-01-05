@@ -1,0 +1,21 @@
+// Place all the styles related to the reviews controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+h2 {
+  text-align: center;
+}
+
+.review-area {
+  display: flex;
+  align-items: center;
+}
+
+.review-text {
+  flex-grow: 1;
+}
+
+.delete-button {
+  margin-left: auto;
+  white-space: nowrap;
+}

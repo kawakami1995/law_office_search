@@ -1,0 +1,286 @@
+// Place all the styles related to the law_offices controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.map {
+  display: flex;
+  justify-content: center;
+}
+
+#google-map { 
+  height: 500px;
+  width: 70%;
+  margin-top: 30px;
+
+  @media screen and (max-width: 599px) {
+    height: 300px;
+    width: 100%;
+  }
+}
+
+a { 
+  color: blue;
+  text-decoration: none;
+}
+
+h1 {
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+
+  @media screen and (max-width: 320px) {
+    font-size: 15px;
+  }
+}
+
+.sorting {
+  width: 80%;
+  text-align: right;
+  margin: 0 auto;
+
+  span {
+    font-weight: bold;
+  }
+
+  @media screen and (max-width: 599px) {
+    width: 100%;
+  }
+}
+
+.law-offices-center-table {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 100px;
+
+  @media screen and (max-width: 599px) {
+    position: relative;
+  }
+}
+
+.show {
+  @media screen and (max-width: 599px) {
+    padding-bottom: 0 !important; 
+  }
+}
+
+.destroy-confirm {
+  padding-bottom: 0 !important;
+}
+
+.law-offices {
+  width: 80%;
+  border-collapse: collapse;
+  border-top: 5px solid #333;
+  border-right: 5px solid #333;
+  border-left: 5px solid #333;
+  border-bottom: 5px solid #333;;
+  text-align: center;
+  margin-bottom: 20px;
+  
+  @media screen and (max-width: 599px) {
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  th {
+    text-align: center;
+  }
+
+  th,
+  td {
+    padding: 16px;
+    font-weight: normal;
+    border-left: 1px solid #333;
+    border-bottom: 1px solid #333;
+  }
+
+  th {
+    background-color: #CDEAFF;
+  }
+
+  td {
+    background-color: #fbf9f9;
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .law-offices {
+    th, td {
+      display: block;
+      text-align: center;
+    }
+  }
+}
+
+.bottom {
+  border-bottom: 5px solid #333;
+}
+
+.review{
+	margin: 30px 0;
+  padding-bottom: 70px;
+
+  h2 {
+    text-align: center;
+  }
+}
+
+.review-button {
+  text-align: center;
+
+  button {
+    margin: 2em auto;
+	  padding:2em;
+	  border-top:solid 5px blue;
+    border-bottom: none;
+    border-right: none;
+    border-left: none;
+	  background-color:#CDEAFF;
+	  box-shadow:3px 1px 4px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+  }
+}
+
+.review-table {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  table {
+    width: 40%;
+  }
+
+  @media screen and (max-width: 599px) {
+    table {
+      width: 100%;
+    }
+  }
+}
+
+.review-box {
+	margin: 2em auto;
+	padding:2em 2em 2em;
+	position:relative;
+	border: 1px solid #909792;
+  width: 50%;
+
+  @media screen and (max-width: 599px) {
+    width: 80%;
+  }
+}
+
+.review-box .review-box-title {
+	background-color:#909792;
+	font-size: 1em;
+	color: #fff ;
+	padding: 7px 10px;
+	line-height: 1;
+	position:absolute;
+	top: 0;
+	left: 0;
+}
+
+.user-icon {
+  width: 20%;
+  height: 20%;
+  padding-right: 10px;
+}
+
+.review-area {
+  display: flex;
+  border-bottom: 1px solid #333;
+  align-items: center;
+}
+
+.center-form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  text-align: center;
+  padding-bottom: 100px;
+
+  @media screen and (max-width: 599px) {
+    padding-bottom: 100px;
+  }
+}
+
+.focus-select {
+  font-size: 20px;
+}
+
+.center-form p {
+  margin-top: 0;
+}
+
+.confirm {
+  text-align: center;
+  padding-bottom: 100px;
+
+  p {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 20px;
+  }
+  
+  button {
+    font-size: 20px;
+  }
+}
+
+.destroy-button {
+  margin-bottom: 1em;
+}
+
+.alert {
+  text-align: center;
+}
+
+.law-office-name {
+  margin-bottom: 0;
+}
+
+.favorite {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.favorite-on {
+  color: #fff;
+  background-color: #4d88ff;
+  border-style: none;
+
+  &:hover{
+    color: #fff;
+    background: #4d88ff;
+    cursor: pointer;
+  }
+}
+
+.review-created-at {
+  font-size: 10px;
+}
+
+.review-star-read {
+  img {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+.average {
+  display: flex;
+  align-items: center;
+  
+  @media screen and (max-width: 599px) {
+    justify-content: center;
+  }
+
+}
+
+.average-score {
+  font-size: 15px;
+  margin-top: 5px;
+  margin-left: 5px;
+}

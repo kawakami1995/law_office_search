@@ -1,0 +1,2 @@
+module LawOfficesHelper
+end

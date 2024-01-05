@@ -1,0 +1,26 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        user_name: ユーザー名
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: パスワード（確認用）
+        current_password: 現在のパスワード
+        
+      law_office:
+        office_name: 法律事務所名
+        representative_lawyer_name: 代表弁護士
+        postal_code: 郵便番号
+        address: 住所
+        latitude: 緯度
+        longitude: 経度
+        phone_number: 電話番号
+        business_hours: 営業時間
+        office_url: 事務所URL
+        focus: 注力分野
+
+      review:
+        review: レビュー
+        star: 星
+

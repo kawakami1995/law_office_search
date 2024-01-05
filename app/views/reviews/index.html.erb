@@ -1,0 +1,26 @@
+<% provide(:title, "投稿された口コミ一覧") %>
+<h2>投稿された口コミ一覧</h2>
+<div class="review">
+  <div class="review-box">
+    <div class="review-box-title">口コミ</div>
+    <table>
+      <% @reviews.each do |review| %>
+        <div class="review-area">
+          <%= image_tag "user_icon.png", class:  "user-icon" %><br>
+          <div class="review-text">
+            <span class="review-created-at">
+              <%= review.updated_at.strftime("%Y年%m月%d日")%>
+            </span>
+            <span class="review-law-office-name">
+              <%= link_to review.law_office.office_name, law_office_show_path(review.law_office) %><br>
+            </span>
+            <div class="review-star-read" id="star_<%= review.id%>"></div>
+            <%= review.review %>
+          </div>
+          <button class="delete-button"><%= link_to '削除', review_destroy_path(id: review.id), method: :delete %></button>
+        </div>
+        <%= render partial: 'layouts/starDisplay', locals: { review: @review } %>
+      <% end %>
+    </table>
+  </div>
+</div>

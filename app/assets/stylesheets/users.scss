@@ -1,0 +1,189 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.users-center-table {
+  margin: 0 0;
+  display: flex;
+  justify-content: center;
+}
+
+.user-account {
+  width: 50%;
+  border-collapse: collapse;
+  border-top: 5px solid #333;
+  border-right: 5px solid #333;
+  border-left: 5px solid #333;
+  border-bottom: 5px solid #333;;
+  text-align: center;
+
+  @media screen and (max-width: 599px) {
+    width: 100%;
+  }
+
+  th,
+  td {
+    padding: 16px;
+    font-weight: normal;
+    border-top: 1.5px solid #333;
+    border-bottom: 1.5px solid #333;
+    border-left: 1.5px solid #333;
+    border-right: 1.5px solid #333;
+    text-align: center;
+  }
+
+  th {
+    background-color: #CDEAFF;
+  }
+}
+
+.account {
+  width: 50%;
+
+  @media screen and (max-width: 599px) {
+    width: fit-content;
+  }
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.edit-path {
+  white-space: nowrap;
+}
+
+.account-delete-button {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 50px;
+
+  button {
+    font-size: 20px;
+  }
+}
+
+.email-edit {
+  text-align: center;
+  height: 250px;
+  
+  li {
+    list-style: none;
+  }
+}
+
+.submit {
+  margin: 10px 0;
+}
+
+.user-name-edit {
+  text-align: center;
+  height: 250px;
+  
+  li {
+    list-style: none;
+  }
+}
+
+.account-table {
+  width: 80%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  border-top: 5px solid #333;
+  border-right: 5px solid #333;
+  border-left: 5px solid #333;
+  border-bottom: 5px solid #333;;
+  text-align: center;
+  margin-bottom: 20px;
+
+  th {
+    text-align: center;
+  }
+
+  @media screen and (max-width: 599px) {
+    width: 100%;
+  }
+
+  th,
+  td {
+    padding: 16px;
+    font-weight: normal;
+    border-left: 1px solid #333;
+    border-bottom: 1px solid #333;
+  }
+
+  th {
+    background-color: #CDEAFF;
+  }
+
+  td {
+    background-color: #fbf9f9;
+    text-align: left;
+  }
+}
+
+.user-favorite-table {
+  display: flex;
+  justify-content: center;
+
+  @media screen and (max-width: 599px) {
+    position: relative;
+  }
+}
+
+.favorites {
+  width: 50%;
+  border-collapse: collapse;
+  border-top: 5px solid #333;
+  border-right: 5px solid #333;
+  border-left: 5px solid #333;
+  border-bottom: 5px solid #333;;
+  text-align: center;
+  margin-bottom: 20px;
+  
+  @media screen and (max-width: 599px) {
+    width: 100%;
+    margin-bottom: 0;
+
+    th, td {
+      display: block;
+      text-align: center !important;
+    }
+  }
+
+  th {
+    text-align: center;
+  }
+
+  th,
+  td {
+    padding: 16px;
+    font-weight: normal;
+    border-left: 1px solid #333;
+    border-bottom: 1px solid #333;
+  }
+
+  th {
+    background-color: #CDEAFF;
+  }
+
+  td {
+    background-color: #fbf9f9;
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .law-offices {
+    th, td {
+      display: block;
+      text-align: center;
+    }
+  }
+}

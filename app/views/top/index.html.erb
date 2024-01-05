@@ -1,0 +1,101 @@
+<body class="f-small p">
+	<div id="container">
+		<div class="top">
+			<div class="top-left">
+				<div class="top-left-contain">
+					<div class="top-left-title">
+						<h2>法律事務所ナビとは</h2>
+					</div>
+					<div class="top-left-text">
+						<p>
+							法律事務所の情報を調べることができるサイトです。<br>
+							会員登録をすれば口コミを投稿することができますので、ぜひご活用ください。
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="top-right">
+				<%= image_tag 'lawyer_1.png', id: 'top-image-icon' %>
+			</div>
+		</div>
+		<div id="contents">
+			<main>
+				<section>
+					<h2>事務所名から探す</h2>
+					<%= form_with model: @law_office, url: law_offices_search_path, method: :get, class: "form", html: {multipart: true} ,local: true do |f| %>
+						<div class="selection-form">
+							<%= f.text_field :office_name,class: "text_field", id: 'focus-select-office-name'%>
+							<%= f.submit "検索", class: "enter", id: "enter-office-name" %>
+							<%= f.hidden_field :sort, value: 'postal_code' %>
+						</div>
+					<% end %>
+				</section>
+				<section>
+					<h2>都道府県から探す</h2>
+					<%= form_with model: @law_office, url: law_offices_search_path, method: :get, class: "form", html: {multipart: true} ,local: true do |f| %>
+						<div class="selection-form">
+							<%= f.select :prefectures, 
+								['北海道',
+								 '青森県','岩手県','宮城県','秋田県','山形県','福島県',
+								 '茨城県','栃木県','群馬県','埼玉県','千葉県','東京都','神奈川県','山梨県','長野県',
+								 '新潟県','富山県','石川県','福井県',
+								 '岐阜県','静岡県','愛知県','三重県',
+								 '滋賀県','京都府','大阪府','兵庫県','奈良県','和歌山県',
+								 '鳥取県','島根県','岡山県','広島県','山口県',
+								 '徳島県','香川県','愛媛県','高知県',
+								 '福岡県','佐賀県','長崎県','熊本県','大分県','宮崎県','鹿児島県',
+								 '沖縄県'
+								], { include_blank: '選択してください' }, class: "select", id: 'focus-select-prefectures'
+							%>
+							<%= f.hidden_field :sort, value: 'postal_code' %>
+							<%= f.submit "検索", class: "enter", id: "enter-prefecture" %>
+						</div>
+					<% end %>
+				</section>
+				<section>
+					<h2>分野から探す</h2>
+					<%= form_with model: @law_office, url: law_offices_search_path, method: :get, class: "form", html: {multipart: true} ,local: true do |f| %>
+						<div class="selection-form">
+							<%= f.select :focus,
+								['離婚・男女問題','相続','インターネット','労働問題','国際・外国人問題',
+								 '税務','刑事事件','企業法務','借金','交通事故',
+								 '消費者被害','債権回収','医療','行政事件','不動産・建築',
+								 'その他'
+								], { include_blank: '選択してください' }, class: "select", id: 'focus-select-cases'
+							%>
+							<%= f.hidden_field :sort, value: 'postal_code' %>
+							<%= f.submit "検索", class: "enter", id: 'enter-case' %>
+						</div>
+					<% end %>
+				</section>
+			</main>
+		</div>
+		<div class="review">
+			<div class="review-box">
+				<div class="review-box-title">口コミ</div>
+				<table>
+					<% @reviews.each do |review| %>						
+						<div class="review-area">
+							<%= image_tag "user_icon.png", class:  "user-icon" %><br>
+							<div class="review-text">
+								<span class="review-created-at">
+									<%= review.updated_at.strftime("%Y年%m月%d日")%>
+								</span>
+								<span class="review-law-office-name">
+									<%= link_to review.law_office.office_name, law_office_show_path(review.law_office) %><br>
+								</span>
+								<div class="review-star-read" id="star_<%= review.id%>"></div>
+								<% if @user.present? %>
+									<%= review.review %>
+								<% else %>
+									<p>ログインをすると口コミを見ることができます。</p>
+								<% end %>		
+							</div>
+						</div>
+						<%= render partial: 'layouts/starDisplay', locals: { review: @review } %>
+					<% end %>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>

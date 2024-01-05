@@ -1,0 +1,35 @@
+<% provide(:title, "法律事務所情報削除確認") %>
+<h2><%= @law_office.office_name %></h2>
+<div class="law-offices-center-table destroy-confirm">
+  <table class="law-offices">
+    <tr>
+      <th>担当弁護士</th>
+      <td><%= @law_office.representative_lawyer_name %></td>
+    </tr>
+    <tr>
+      <th>注力分野</th>
+      <td><%= @law_office.focus %></td>
+    </tr>
+    <tr>
+      <th>住所</th>
+      <td><%= @law_office.address %></td>
+    </tr>
+    <tr>
+      <th>電話番号</th>
+      <td><%= @law_office.phone_number %></td>
+    </tr>
+    <tr>
+      <th>営業時間</th>
+      <td><%= @law_office.business_hours %></td>
+    </tr>
+    <tr>
+      <th>ホームページ</th>
+      <td><a href="<%= @law_office.office_url %>"><%= @law_office.office_name %></a></td>
+    </tr>
+  </table>
+</div>
+<div class="confirm">
+  <p style="color: red;">この法律事務所を削除しますか？</p>
+  <button class="destroy-button"><%= link_to "削除する", law_office_destroy_path(id: @law_office.id), method: :delete %></button><br>
+  <button><%= link_to "戻る", :back %></button>
+</div>

@@ -1,0 +1,161 @@
+@charset "utf-8";
+
+/*全体の設定
+---------------------------------------------------------------------------*/
+html,body {
+	height: 100%;
+}
+
+body {
+	font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", Meiryo, "メイリオ", "Osaka", "MS PGothic", "ＭＳ Ｐゴシック", sans-serif;	/*フォント種類（ゴシック）*/
+	-webkit-text-size-adjust: none;
+	background: #fff;	
+	color: #444;
+	line-height: 2;
+	border-top: 5px solid #4d88ff;
+	animation: opa1 0.3s 0.5s both;
+	height: 105vh;
+  margin: 0;
+}
+
+/*table全般の設定*/
+table {border-collapse:collapse;}
+
+/*画像全般の設定*/
+img {border: none;max-width: 100%;height: auto;vertical-align: middle;}
+
+/*他*/
+input {font-size: 1rem;}
+section + section {
+	margin-top: 1rem;
+}
+
+/*リンクテキスト全般の設定
+---------------------------------------------------------------------------*/
+a {
+	transition: 0.3s;	/*hoverまでにかける時間。0.3秒。*/
+}
+
+/*コンテナー（サイト全体を囲むブロック）
+---------------------------------------------------------------------------*/
+#container {
+	height: 100%;
+	display: flex;	/*flexボックスを使う指定*/
+	flex-direction: column;	/*子要素を縦並びにする*/
+	justify-content: space-between;	/*並びかたの種類の指定*/
+}
+
+/*コンテンツ（フッター関連「以外」を囲むブロック）
+---------------------------------------------------------------------------*/
+#contents {
+	flex: 1;
+}
+
+/*header（ロゴが入った最上段のブロック）
+---------------------------------------------------------------------------*/
+.top-page-title {
+  font-weight: bold;
+  font-size: 20px;
+	color: white;
+	padding-left: 10px;
+	align-items: center;
+}
+ 
+.site-header {
+  position: relative;
+	background-color: #4d88ff;
+}
+ 
+.site-header__wrapper {
+  padding-top: 1rem;
+  padding-bottom: 1rem; 
+}
+  @media (min-width: 600px) {
+    .site-header__wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 0;
+      padding-bottom: 0; 
+		} 
+	}
+@media (min-width: 600px) {
+  .nav__wrapper {
+    display: flex;
+		list-style: none; 
+	} 
+}
+ 
+@media (max-width: 599px) {
+  .nav__wrapper {
+    position: absolute;
+    top: 80%;
+    right: 0;
+    left: 0;
+    z-index: -1;
+    background-color: #4d88ff;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+		list-style: none; 
+		z-index: 1;
+	}
+    .nav__wrapper.active {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0); 
+		} 
+}
+ 
+.nav__item a {
+  display: block;
+  padding: 1.5rem 1rem;
+	color: white;
+	font-weight:bold
+}
+ 
+.nav__toggle {
+  display: none; 
+}
+  @media (max-width: 599px) {
+    .nav__toggle {
+      display: flex;
+      position: absolute;
+      right: 1rem;
+      top: 1.5rem; 
+		} 
+	}
+
+/*mainブロック設定
+---------------------------------------------------------------------------*/
+/*mainブロック内のh2タグ*/
+main h2 {
+	margin: 0 0 1rem;		/*h2の外側にとるスペース。上、左右、下への順番。*/
+	padding-left: 1rem;		/*左側に１文字分の余白を作る*/
+	letter-spacing: 0.1em;	/*文字間隔を少しだけ広くとる*/
+	background: #4d88ff;	/*背景色*/
+	color: #fff;			/*文字色*/
+}
+
+/*フッター設定
+---------------------------------------------------------------------------*/
+footer {
+	background: #000;		/*背景色*/
+	color: #fff;			/*文字色*/
+	text-align: center;		/*内容をセンタリング*/
+	max-height: 100vh;
+	bottom: 0;
+	width: 100%;
+	padding: 10px 0;
+	position: fixed;
+}
+
+/*リンクテキスト*/
+footer a {color: inherit;text-decoration: none;}
+
+/*ソートリンクがアクティブの場合*/
+.sort-link.active {
+  font-weight: bold;
+  color: black;
+}
