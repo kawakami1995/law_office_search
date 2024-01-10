@@ -18,7 +18,10 @@
       </tr>
       <tr>
         <th>住所</th>
-        <td><%= law_office.address %></td>
+        <td>
+          <%= format_postal_code(law_office.postal_code) %> <br>
+          <%= law_office.address %>
+        </td>
       </tr>
       <tr>
         <th>電話番号</th>

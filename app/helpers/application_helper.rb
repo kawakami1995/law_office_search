@@ -13,4 +13,8 @@ module ApplicationHelper
     return 'sort-link active' if params[:sort] == column.to_s
     'sort-link'
   end
+
+  def format_postal_code(postal_code)
+    "〒#{postal_code[0..2]}-#{postal_code[3..6]}"
+  end
 end
