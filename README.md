@@ -75,9 +75,9 @@ https://law-office-search-e86cd269003b.herokuapp.com/
     <img width="1427" alt="スクリーンショット マイページ3" src="https://github.com/kawakami1995/law_office_search/assets/127808281/98e2f593-d2aa-4d10-a4e6-7648aa924e33">
 - 法律事務所検索機能
   - 検索結果一覧（郵便番号順）
-    ![スクリーンショット 検索結果一覧](https://github.com/kawakami1995/law_office_search/assets/127808281/97bb040c-524e-4169-97de-9e3fcb0a30bc)
+    ![スクリーンショット 検索結果一覧](https://github.com/kawakami1995/hotel_reservation/assets/127808281/ad17eec1-0bbf-4e16-b513-55e2212dccdd)
   - 検索結果一覧（レビュー順）
-    ![スクリーンショット 検索結果一覧2](https://github.com/kawakami1995/law_office_search/assets/127808281/e8f0a4a5-daa4-44cd-a1c5-bf5ceda5db68)
+    ![スクリーンショット 検索結果一覧2](https://github.com/kawakami1995/hotel_reservation/assets/127808281/3dd6b388-aefc-4c6d-863c-436230809699)
   - 法律事務所詳細
     ![スクリーンショット 法律事務所詳細](https://github.com/kawakami1995/law_office_search/assets/127808281/aba24ac6-b478-40c6-bb37-d8e4fdf8fa8d)
     <img width="1428" alt="スクリーンショット 法律事務所詳細2" src="https://github.com/kawakami1995/law_office_search/assets/127808281/93cd6e5b-082e-4e70-b745-1b094c2a391c">
