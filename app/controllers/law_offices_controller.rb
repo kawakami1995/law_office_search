@@ -31,7 +31,7 @@ class LawOfficesController < ApplicationController
     if average_star_value.present?
       @average_star = average_star_value.to_f
     else
-      @average_star = 0
+      @average_star = 0.0
     end
     
     if @user.present?
