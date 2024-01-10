@@ -70,21 +70,23 @@ https://law-office-search-e86cd269003b.herokuapp.com/
   - メールアドレス・ユーザーネーム編集
     <img width="1422" alt="スクリーンショット マイページ" src="https://github.com/kawakami1995/law_office_search/assets/127808281/a9177b7b-9780-4ca8-9216-6a633c1c6955">
   - お気に入り登録中の事務所情報
-    <img width="1417" alt="スクリーンショット マイページ3" src="https://github.com/kawakami1995/hotel_reservation/assets/127808281/654c34f3-edf9-48e1-af0d-5c76324e517c">
+    ![スクリーンショット マイページ2](https://github.com/kawakami1995/law_office_search/assets/127808281/de4dc1d5-e1b2-4a94-aebf-57141122c66e)
   - 投稿した口コミ
-    <img width="1427" alt="スクリーンショット マイページ2" src="https://github.com/kawakami1995/law_office_search/assets/127808281/2a6752f4-44b2-497c-9069-6bc0cb8fcd4d">
+    <img width="1427" alt="スクリーンショット マイページ3" src="https://github.com/kawakami1995/law_office_search/assets/127808281/98e2f593-d2aa-4d10-a4e6-7648aa924e33">
 - 法律事務所検索機能
-  - 検索結果一覧（住所順）
-    ![スクリーンショット 検索結果一覧](https://github.com/kawakami1995/law_office_search/assets/127808281/600fcc36-ab26-4ffc-9af8-ee29eb9fb01a)
+  - 検索結果一覧（郵便番号順）
+    ![スクリーンショット 検索結果一覧](https://github.com/kawakami1995/law_office_search/assets/127808281/97bb040c-524e-4169-97de-9e3fcb0a30bc)
   - 検索結果一覧（レビュー順）
-    ![スクリーンショット 検索結果一覧2](https://github.com/kawakami1995/law_office_search/assets/127808281/94ea0084-0442-4ca9-b0c3-794b7692ba05)
+    ![スクリーンショット 検索結果一覧2](https://github.com/kawakami1995/law_office_search/assets/127808281/e8f0a4a5-daa4-44cd-a1c5-bf5ceda5db68)
   - 法律事務所詳細
-    <img width="1424" alt="スクリーンショット 法律事務所詳細" src="https://github.com/kawakami1995/law_office_search/assets/127808281/ec9d0f65-c021-4452-9c69-4c4762d07345">
+    ![スクリーンショット 法律事務所詳細](https://github.com/kawakami1995/law_office_search/assets/127808281/aba24ac6-b478-40c6-bb37-d8e4fdf8fa8d)
     <img width="1428" alt="スクリーンショット 法律事務所詳細2" src="https://github.com/kawakami1995/law_office_search/assets/127808281/93cd6e5b-082e-4e70-b745-1b094c2a391c">
     <img width="1427" alt="スクリーンショット 法律事務所詳細3" src="https://github.com/kawakami1995/law_office_search/assets/127808281/b67ccb3b-59c7-4651-81a9-543247e394f6">
 - お気に入り登録機能
-  <img width="1426" alt="スクリーンショット お気に入り登録" src="https://github.com/kawakami1995/law_office_search/assets/127808281/1692286c-06ff-484e-bb8f-30f69ab4f2dc">
-  <img width="1424" alt="スクリーンショット お気に入り登録2" src="https://github.com/kawakami1995/law_office_search/assets/127808281/9198d15e-5ae7-42a5-9853-753456a8f29e">
+  - お気に入り登録していない場合
+  ![スクリーンショット お気に入り登録](https://github.com/kawakami1995/law_office_search/assets/127808281/d5e9a2d5-cb7c-4dc8-9455-e51f5511f4fb)
+  - お気に入り登録している場合
+  ![スクリーンショット お気に入り登録2](https://github.com/kawakami1995/law_office_search/assets/127808281/f6f01d11-b8a7-4dc7-b11b-200dfeb47eaa)
 - 口コミ投稿機能
   <img width="1425" alt="スクリーンショット 口コミ投稿" src="https://github.com/kawakami1995/law_office_search/assets/127808281/f463f84a-76e7-4a82-bf3d-9e4f8b68fa56">
 
