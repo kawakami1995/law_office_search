@@ -88,18 +88,20 @@ RSpec.describe 'Law_offices', type: :system do
 
   describe 'GET #show' do
     before do
-      @review1 = FactoryBot.create(:review1)
-      @review2 = FactoryBot.create(:review2)
-      @review3 = FactoryBot.create(:review3)
-      @review4 = FactoryBot.create(:review4)
-      visit law_offices_index_path
-      click_link('詳細', href: law_office_show_path(id: @law_office1.id))
+      @user1 = FactoryBot.create(:user1)
+      @user2 = FactoryBot.create(:user2)
+      @review1 = FactoryBot.create(:review1, user_id: @user1.id, law_office_id: @law_office1.id)
+      @review2 = FactoryBot.create(:review2, user_id: @user1.id, law_office_id: @law_office2.id)
+      @review3 = FactoryBot.create(:review3, user_id: @user2.id, law_office_id: @law_office1.id)
+      @review4 = FactoryBot.create(:review4, user_id: @user2.id, law_office_id: @law_office2.id)
+      visit law_office_show_path(id: @law_office1.id)
     end
 
     it '該当する法律事務所の詳細が表示される' do
       expect(page).to have_content(@law_office1.office_name)
       expect(page).to have_content(@law_office1.representative_lawyer_name)
       expect(page).to have_content(@law_office1.focus)
+      expect(page).to have_content('〒111-1111')
       expect(page).to have_content(@law_office1.address)
       expect(page).to have_content(@law_office1.phone_number)
       expect(page).to have_content(@law_office1.business_hours)
@@ -120,7 +122,7 @@ RSpec.describe 'Law_offices', type: :system do
 
     context 'ログインしている場合' do
       before do
-        @user1 = FactoryBot.create(:user1)
+
         sign_in @user1
         visit law_offices_index_path
         click_link('詳細', href: law_office_show_path(id: @law_office1.id))
