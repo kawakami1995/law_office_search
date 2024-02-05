@@ -1,0 +1,83 @@
+// Place all the styles related to the top controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.form {
+  text-align: center;
+}
+
+.selection-form {
+  display: inline;
+  align-items: center;
+}
+
+.select {
+  width: 50%;
+  height: 50px;
+  font-size: 25px;
+  text-align: center;
+}
+
+.text_field {
+  width: 50%;
+  height: 45px;
+  font-size: 25px;
+  text-align: center;
+}
+
+.enter {
+  height: 50px;
+  font-size: 25px;
+}
+
+.top {
+  display: flex;
+  justify-content: center;
+  height: 30%;
+  background-color: #c0c0c0;
+  padding: 5px 5px;
+}
+
+.top-left {
+  display: flex;
+  align-items: center;
+
+  @media screen and (max-width: 399px) {
+    h2 {
+      font-size: 17px;
+    }
+
+    p {
+      font-size: 13px;
+    }
+  }
+}
+
+.top-right {
+  display: flex;
+  align-items: center;
+  img {
+    max-height: 100%;
+    width: auto;
+  }
+}
+
+.top-review-box {
+  margin: 2em auto;
+	padding:2em 2em 2em;
+	position:relative;
+	border: 1px solid #909792;
+  width: 50%;
+
+  @media screen and (max-width: 599px) {
+    width: 80%;
+  }
+}
+
+.review-law-office-name {
+  font-size: 10px;
+
+  @media (max-width: 600px) {
+    display: block;
+  }
+}

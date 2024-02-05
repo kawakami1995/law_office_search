@@ -1,0 +1,51 @@
+<% provide(:title, "法律事務所検索結果") %>
+<h1><%= @law_offices_count %>件見つかりました</h1>
+<div class="sorting">
+  <span>並べ替え</span>
+  <%= link_to '郵便番号順', { action: 'search', sort: 'postal_code', office_name: params[:office_name], prefectures: params[:prefectures], focus: params[:focus] }, class: sort_class('postal_code') %>
+  <%= link_to 'レビュー順', { action: 'search', sort: 'review', office_name: params[:office_name], prefectures: params[:prefectures], focus: params[:focus] }, class: sort_class('review') %>
+</div>
+<div class="law-offices-center-table">
+  <table class="law-offices">
+    <% @law_offices.each do |law_office| %>
+      <tr>
+        <th>法律事務所名</th>
+        <td><%= law_office.office_name %></td>
+      </tr>
+      <tr>
+        <th>担当弁護士</th>
+        <td><%= law_office.representative_lawyer_name %></td>
+      </tr>
+      <tr>
+        <th>住所</th>
+        <td>
+          <%= format_postal_code(law_office.postal_code) %> <br>
+          <%= law_office.address %>
+        </td>
+      </tr>
+      <tr>
+        <th>電話番号</th>
+        <td><%= law_office.phone_number %></td>
+      </tr>
+      <tr>
+        <th>営業時間</th>
+        <td><%= law_office.business_hours %></td>
+      </tr>
+      <tr>
+        <th class="category-name">評価</th>
+        <td>
+          <div class="average">
+            <span class="average-star"><%= image_tag asset_path('star-on.png') %></span>
+            <span class="average-score"><%= law_office.average_star.to_f.floor(1) %> </span>
+          </div>
+        </td>
+      </tr>
+      <tr class="bottom">
+        <th>事務所詳細</th>
+        <td>
+          <%= link_to '詳細', law_office_show_path(id: law_office.id) %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>

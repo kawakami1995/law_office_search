@@ -1,0 +1,83 @@
+<% provide(:title, "法律事務所詳細") %>
+<h2 class="law-office-name"><%= @law_office.office_name %></h2>
+<div class="favorite">
+  <div class="favorite-button">
+    <% if @user.nil? %>
+      <%= button_to 'お気に入り登録', favorites_create_path, method: :post, class: 'favorite-off off-1' %>
+    <% elsif @user.present? && @favorite.nil? %>
+      <%= button_to 'お気に入り登録', favorites_create_path, method: :post, params: { user_id: @user.id, law_office_id: @law_office.id }, class: 'favorite-off off-2' %>
+    <% else %>
+      <%= button_to 'お気に入り解除', favorites_destroy_path, method: :delete, params: { user_id: @user.id, law_office_id: @law_office.id }, class: 'favorite-on' %>
+    <% end %>
+  </div>
+</div>
+<div class="alert" style="color: red;"><%= alert %></div>
+<div class="law-offices-center-table  show">
+  <table class="law-offices">
+    <tr>
+      <th>担当弁護士</th>
+      <td><%= @law_office.representative_lawyer_name %></td>
+    </tr>
+    <tr>
+      <th>注力分野</th>
+      <td><%= @law_office.focus %></td>
+    </tr>
+    <tr>
+      <th>住所</th>
+      <td>
+        <%= format_postal_code(@law_office.postal_code) %> <br>
+        <%= @law_office.address %>
+      </td>
+    </tr>
+    <tr>
+      <th>電話番号</th>
+      <td><%= @law_office.phone_number %></td>
+    </tr>
+    <tr>
+      <th>営業時間</th>
+      <td><%= @law_office.business_hours %></td>
+    </tr>
+    <tr>
+      <th class="category-name">評価</th>
+      <td>
+        <div class="average">
+          <span class="average-star"><%= image_tag asset_path('star-on.png') %></span>
+          <span class="average-score"><%= @average_star.floor(1) %> </span>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th>ホームページ</th>
+      <td><a href="<%= @law_office.office_url %>"><%= @law_office.office_name %></a></td>
+    </tr>
+  </table>
+</div>
+<div class="map">
+  <div id="google-map" data-latitude="<%= @law_office.latitude %>" data-longitude="<%= @law_office.longitude %>"></div>
+</div>
+<div class="review">
+  <div class="review-button">
+    <button><%= link_to '口コミを投稿する', reviews_new_path(law_office_id: @law_office.id) %></button>
+  </div>
+  <div class="review-box">
+    <div class="review-box-title">口コミ</div>
+    <table>
+      <% @reviews.each do |review| %>
+        <div class="review-area">
+          <%= image_tag "user_icon.png", class:  "user-icon" %><br>
+          <div class="review-text">
+            <span class="review-created-at"><%= review.updated_at.strftime("%Y年%m月%d日") %></span><br>
+            <div class="review-star-read" id="star_<%= review.id%>"></div>
+            <% if @user.present? %>
+              <%= review.review %>
+            <% else %>
+              <p>ログインをすると口コミを見ることができます。</p>
+            <% end %>	
+          </div>
+        </div>
+        <%= render partial: 'layouts/starDisplay', locals: { review: @review } %>
+      <% end %>
+    </table>
+  </div>
+</div>
+<%= render partial: 'layouts/googleMap' %>

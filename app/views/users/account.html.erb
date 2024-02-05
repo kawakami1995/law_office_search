@@ -1,0 +1,93 @@
+<% provide(:title, "アカウント情報") %>
+<h2 class="my-page-h2">アカウント情報</h2>
+<div class="users-center-table">
+  <table border="1" class="user-account">
+    <tr>
+      <th>ユーザー名</th>
+      <th><%= @user.user_name %></th>
+      <th class="edit-path"><%= link_to "変更", user_name_edit_path %></th>
+    </tr>
+    <tr>
+      <th>メールアドレス</th>
+      <th><%= @user.email %></th>
+      <th class="edit-path"><%= link_to "変更", email_edit_path %></th>
+    </tr>
+  </table>
+</div>
+<div class="account-delete-button">
+  <button><%= link_to "アカウントを削除する", user_destroy_confirm_path %></button>
+</div>
+<div class="favorite">
+  <h2 class="my-page-h2">お気に入り登録中</h2>
+  <div class="user-favorite-table">
+    <table class="favorites">
+      <% @law_offices.each do |law_office| %>
+        <tr>
+          <th>法律事務所名</th>
+          <td><%= law_office.office_name %></td>
+        </tr>
+        <tr>
+          <th>担当弁護士</th>
+          <td><%= law_office.representative_lawyer_name %></td>
+        </tr>
+        <tr>
+          <th>住所</th>
+          <td>
+            <%= format_postal_code(law_office.postal_code) %> <br>
+            <%= law_office.address %>
+          </td>
+        </tr>
+        <tr>
+          <th>電話番号</th>
+          <td><%= law_office.phone_number %></td>
+        </tr>
+        <tr>
+          <th>営業時間</th>
+          <td><%= law_office.business_hours %></td>
+        </tr>
+        <tr>
+          <th class="category-name">評価</th>
+          <td>
+            <div class="average">
+              <span class="average-star"><%= image_tag asset_path('star-on.png') %></span>
+              <span class="average-score"><%= law_office.average_star.floor(1) %> </span>
+            </div>
+          </td>
+        </tr>
+        <tr class="bottom">
+          <th>事務所詳細</th>
+          <td>
+            <%= link_to '詳細', law_office_show_path(id: law_office.id) %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+<div class="review">
+  <div class="review-box">
+    <div class="review-box-title">投稿した口コミ</div>
+    <table>
+      <% @reviews.each do |review| %>
+        <div class="review-area">
+          <%= image_tag "user_icon.png", class:  "user-icon" %><br>
+          <div class="review-text">
+            <span class="review-created-at">
+              <%= review.updated_at.strftime("%Y年%m月%d日")%>
+            </span>
+            <span class="review-law-office-name">
+              <%= link_to review.law_office.office_name, law_office_show_path(review.law_office) %><br>
+            </span>
+            <div class="review-star-read" id="star_<%= review.id%>"></div>
+            <%= review.review %>
+          </div>
+          <div class="review-buttons">
+            <div class="edit-button"><button><%= link_to '編集', review_edit_path(id: review.id, user_id: review.user_id) %></button></div>
+            <div class="delete-button"><button class="delete-button"><%= link_to '削除', review_destroy_path(id: review.id), method: :delete %></button></div>
+          </div>
+        </div>
+        <%= render partial: 'layouts/starDisplay', locals: { review: @review } %>
+      <% end %>
+    </table>
+  </div>
+</div>

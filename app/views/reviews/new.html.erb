@@ -1,0 +1,33 @@
+<% provide(:title, "口コミ投稿") %>
+<h2>口コミ投稿</h2>
+<div class="center-form">
+  <%= form_with model: @review, url: review_create_path, html: {multipart: true} ,local: true do |f| %>
+    <%= render "shared/error", obj: @review %> 
+
+    <div class="field" id="star">
+      <%= f.label :star, '評価' %>
+      <%= f.hidden_field :star, id: :review_star %>
+      <div id="post_raty"></div>
+    </div>
+
+    <div class="field text-area">
+      <%= f.text_area :review, autocomplete: "review", size: "40x10", id: "review" %>
+    </div>  
+
+    <div class="actions">
+      <%= f.submit "投稿"%>
+    </div>
+    
+    <button><%= link_to "戻る", law_office_show_path(id: @law_office.id) %></button>
+
+    <div class="field">
+      <%= f.hidden_field :user_id, autofocus: true, autocomplete: "user_id", value: @user.id %><br>
+    </div>
+
+    <div class="field">
+      <%= f.hidden_field :law_office_id, autocomplete: "law_office_id", value: @law_office.id %><br>
+    </div>
+  <% end %>
+  
+  <%= render partial: 'layouts/starInput', locals: { review: @review } %>
+</div>
